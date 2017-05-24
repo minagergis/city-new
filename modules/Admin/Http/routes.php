@@ -96,6 +96,7 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin', 'namespace' => 'Module
 			Route::get( '/',					[ 'as' => 'admin.category.get', 				'uses' => 'CategoryController@getAddCategory'     			]);
 			Route::get( '/properties',			[ 'as' => 'admin.category.properties.get', 		'uses' => 'CategoryController@getCategoryProperties' 			]);
 			Route::get( '/gallary',				[ 'as' => 'admin.category.gallary.get', 		'uses' => 'CategoryController@getCategoryGallary' 			]);
+			Route::get( '/awards',				[ 'as' => 'admin.category.awards.get', 		'uses' => 'CategoryController@getCategoryAwards' 			]);
 			Route::get( '/add-new',				[ 'as' => 'admin.category.add.get', 			'uses' => 'CategoryController@getAddCategory'   		]);
 			Route::post( '/add-new',			[ 'as' => 'admin.category.add.post', 			'uses' => 'CategoryController@postAddCategory'   		]);
 			Route::get( '/edit/{id}',			[ 'as' => 'admin.category.edit.get', 			'uses' => 'CategoryController@getEditCategory'   		]);

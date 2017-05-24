@@ -74,6 +74,10 @@
                                                 @if(isset($category)) @if($category->type=='gallary') selected @endif @endif>
                                             Gallary
                                         </option>
+                                        <option value="awards"
+                                                @if(isset($category)) @if($category->type=='awards') selected @endif @endif>
+                                            Awards
+                                        </option>
 
 
                                     </select>
@@ -200,6 +204,35 @@
                                 </div>
                             </div>
 
+                            <div class="portlet box green">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-comments"></i>Awards
+                                    </div>
+                                    <div class="tools">
+                                        <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
+                                        <a href="javascript:;" class="reload" data-original-title="" title=""> </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <table class="table table-striped table-bordered table-hover table-checkable order-column"
+                                           id="awardstable">
+                                        <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Slug</th>
+                                            @if(isset($language_icon))
+                                                @foreach($language_icon as $i)
+                                                    <th><i class="glyphicon bfh-flag-{{ $i }}"></i></th>
+                                                @endforeach
+                                            @endif
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+
 
                         </div>
 
@@ -290,38 +323,38 @@
                 });
 
 
-                {{--$(function () {--}}
+                $(function () {
 
-                {{--var oTable = $('#downloadstable').DataTable({--}}
-                {{--processing: true,--}}
-                {{--serverSide: true,--}}
-                {{--ajax: {--}}
-                {{--url: "{{ route('admin.category.downloads.get') }}",--}}
-                {{--},--}}
-                {{--columns: [--}}
+                var oTable = $('#awardstable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: {
+                url: "{{ route('admin.category.awards.get') }}",
+                },
+                columns: [
 
-                {{--{data: 'name', name: 'name'},--}}
-                {{--{data: 'slug', name: 'slug'},--}}
+                {data: 'name', name: 'name'},
+                {data: 'slug', name: 'slug'},
 
-                {{--@if(isset($language_available))--}}
-                {{--@foreach($language_available as $l)--}}
-                {{--{--}}
-                {{--data: "{{{ $l }}}", name: 'category.id', orderable: false, searchable: false--}}
-                {{--},--}}
-                {{--@endforeach--}}
-                {{--@endif--}}
+                @if(isset($language_available))
+                @foreach($language_available as $l)
+                {
+                data: "{{{ $l }}}", name: 'category.id', orderable: false, searchable: false
+                },
+                @endforeach
+                @endif
 
-                {{--{--}}
-                {{--data: 'action', name: 'action', orderable: false, searchable: false--}}
-                {{--}--}}
+                {
+                data: 'action', name: 'action', orderable: false, searchable: false
+                }
 
-                {{--]--}}
-                {{--});--}}
-                {{--oTable.draw();--}}
-                {{--$('#search-form').on('submit', function (e) {--}}
-                {{--oTable.draw();--}}
-                {{--e.preventDefault();--}}
-                {{--});--}}
-                {{--});--}}
+                ]
+                });
+                oTable.draw();
+                $('#search-form').on('submit', function (e) {
+                oTable.draw();
+                e.preventDefault();
+                });
+                });
             </script>
 @stop

@@ -259,6 +259,57 @@ class CategoryController extends AdminController
         return $datatables->make(true);
 
     }
+    public function getCategoryAwards()
+    {
+        $lang = \Session::get('lang');
+
+        $articles = CategoryTranslation::join('category', 'category.id', '=', 'category_translations.category_id')
+            ->select([
+                'category_translations.name as name',
+                'category_translations.locale as locale',
+                'category.id as category_id',
+                'category_translations.slug as slug',
+            ])
+            ->where(function ($query) use ($lang) {
+                if ($lang == 'all') {
+                    $query->whereIn('category_translations.locale', $this->language_available);
+                } else {
+                    $query->where('category_translations.locale', $lang);
+                }
+
+            })
+            ->where('category.type', 'awards')
+            ->orderby('category.id', 'DESC');
+
+
+        $datatables = app('datatables')->of($articles);
+
+        foreach ($this->language_available as $l) {
+            $datatables->addColumn($l, function ($articles) use ($l) {
+
+                $c = CategoryTranslation::where('category_id', $articles->category_id)
+                    ->where('locale', $l)
+                    ->get();
+                if (count($c) > 0) {
+                    if ($articles->locale == $l) {
+                        $icon = 'ok';
+                    } else {
+                        $icon = 'pencil';
+                    }
+                    return '<a href="' . route('admin.category.edit.get', [$articles->category_id, "&lang=$l"]) . '"><span class="glyphicon glyphicon-' . $icon . '"></span></a>';
+                } else {
+                    return '<a href="' . route('admin.category.add.get', "id=$articles->category_id&lang=$l") . '"><span class="glyphicon glyphicon-plus"></span></a>';
+                }
+
+            });
+        }
+
+        $datatables->addColumn('action', function ($articles) {
+            return '<a class="btn btn-danger btn-sm" href="' . route('admin.category.delete.post', $articles->category_id) . '"><i class="fa fa-trash"></i>delete</a>';
+        });
+        return $datatables->make(true);
+
+    }
 
 
 }

@@ -111,7 +111,7 @@
         </div>
     </div>
 @endif
-@if(\Request::get('post_type') == 'Properties' || \Request::get('post_type') == 'Gallary' )
+@if(\Request::get('post_type') == 'Properties' || \Request::get('post_type') == 'Gallary'|| \Request::get('post_type') == 'Award' )
 
     <div class="portlet box green-meadow categories">
         <div class="portlet-title">

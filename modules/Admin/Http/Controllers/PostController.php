@@ -19,7 +19,7 @@ class PostController extends AdminController
      * @var
      */
     private $post, $post_translations, $language, $post_type, $current_lang, $language_available, $language_icon;
-    private $post_type_array = ['Properties', 'Gallary', 'Slider','Magazine','Events'];
+    private $post_type_array = ['Properties', 'Gallary', 'Slider','Magazine','Events','Team','About','Award'];
 
     public function __construct()
     {

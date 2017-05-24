@@ -109,7 +109,16 @@
                                     </div>
                                 </div>
                             @endif
-
+                            <br>
+                            <div class="form-group {{ $errors->has('post_excerpt') ? ' has-error' : '' }} excerpt">
+                                <div class="col-md-12">
+                                    <textarea name="post_excerpt" class="form-control" rows="6"
+                                              placeholder="Enter post excerpt here">{{ isset($post) && $post->translate($current_lang) !== null ? $post->translate($current_lang)->post_excerpt : old('post_excerpt') }}</textarea>
+                                    @if ($errors->has('post_excerpt'))
+                                        <span class="help-block">{{ $errors->first('post_excerpt') }}</span>
+                                    @endif
+                                </div>
+                            </div>
                             <br>
                             <div class="form-group {{ $errors->has('post_content') ? ' has-error' : '' }}">
                                 <div class="col-md-12">
@@ -122,15 +131,7 @@
                             </div>
 
                             <br><br>
-                            <div class="form-group {{ $errors->has('post_excerpt') ? ' has-error' : '' }} excerpt">
-                                <div class="col-md-12">
-                                    <textarea name="post_excerpt" class="form-control" rows="6"
-                                              placeholder="Enter post excerpt here">{{ isset($post) && $post->translate($current_lang) !== null ? $post->translate($current_lang)->post_excerpt : old('post_excerpt') }}</textarea>
-                                    @if ($errors->has('post_excerpt'))
-                                        <span class="help-block">{{ $errors->first('post_excerpt') }}</span>
-                                    @endif
-                                </div>
-                            </div>
+
                             @if($post_type === 'Properties')
                                 @include('admin::sections.posts.tabpanel')
                                 @include('admin::sections.posts.maps')

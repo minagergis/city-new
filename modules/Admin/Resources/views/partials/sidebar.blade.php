@@ -29,9 +29,10 @@
 
                         <?php
                             $post_types_sidebar = [
-                                    ['type' => 'Properties', 'icon' => 'fa-newspaper-o'],
-                                    ['type' => 'Gallary', 'icon' => 'fa-file-o'],
                                     ['type' => 'Slider', 'icon' => 'fa-television'],
+                                    ['type' => 'Properties', 'icon' => 'fa-home'],
+                                    ['type' => 'Gallary', 'icon' => 'fa-file-image-o'],
+                                    ['type' => 'Award', 'icon' => 'fa-list'],
 
                             ];
                         ?>
@@ -59,7 +60,7 @@
                         @endforeach
                         <li class="nav-item  @if(\Request::get('post_type') == 'Magazine' or \Request::get('post_type') == 'Events' ) start active open @endif">
                             <a href="javascript:;" class="nav-link nav-toggle">
-                                <i class="fa fa-television"></i>
+                                <i class="fa fa-newspaper-o"></i>
                                 <span class="title">Media</span>
                                 <span class="arrow @if(\Request::get('post_type') == 'Magazine' or \Request::get('post_type') == 'Events' )  open @endif"></span>
                             </a>
@@ -72,6 +73,26 @@
                                 <li class="nav-item  @if(Request::route()->getName() == 'admin.posts.get' && \Request::get('post_type') == 'Events' ) start active open @endif">
                                     <a href="{{ route('admin.posts.get','post_type=Events') }}" class="nav-link ">
                                         <span class="title">All News & Events</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item  @if(\Request::get('post_type') == 'Team' or \Request::get('post_type') == 'About' ) start active open @endif">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="fa fa-sticky-note-o"></i>
+                                <span class="title">About</span>
+                                <span class="arrow @if(\Request::get('post_type') == 'Team' or \Request::get('post_type') == 'About' )  open @endif"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  @if(Request::route()->getName() == 'admin.posts.get' && \Request::get('post_type') == 'Team' ) start active open @endif">
+                                    <a href="{{ route('admin.posts.get','post_type=Team') }}" class="nav-link ">
+                                        <span class="title">Board Of Directors</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  @if(Request::route()->getName() == 'admin.posts.get' && \Request::get('post_type') == 'About' ) start active open @endif">
+                                    <a href="{{ route('admin.posts.get','post_type=About') }}" class="nav-link ">
+                                        <span class="title">About Pages</span>
                                     </a>
                                 </li>
                             </ul>
