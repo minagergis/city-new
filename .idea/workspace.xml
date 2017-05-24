@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2ac989b-e2f9-4a4f-ae13-ec7320a72c3e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Admin/Http/Controllers/CategoryController.php" afterPath="$PROJECT_DIR$/modules/Admin/Http/Controllers/CategoryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Admin/Http/Controllers/PostController.php" afterPath="$PROJECT_DIR$/modules/Admin/Http/Controllers/PostController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Admin/Http/routes.php" afterPath="$PROJECT_DIR$/modules/Admin/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Admin/Resources/views/partials/sidebar.blade.php" afterPath="$PROJECT_DIR$/modules/Admin/Resources/views/partials/sidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Admin/Resources/views/partials/sidebar_post.blade.php" afterPath="$PROJECT_DIR$/modules/Admin/Resources/views/partials/sidebar_post.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Admin/Resources/views/sections/category/create_edit.blade.php" afterPath="$PROJECT_DIR$/modules/Admin/Resources/views/sections/category/create_edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Admin/Resources/views/sections/posts/create_edit.blade.php" afterPath="$PROJECT_DIR$/modules/Admin/Resources/views/sections/posts/create_edit.blade.php" />
     </list>
     <ignored path="citystars.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,8 +78,8 @@
       <file leaf-file-name="sidebar.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/Admin/Resources/views/partials/sidebar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="84" />
+            <state relative-caret-position="86">
+              <caret line="195" column="41" selection-start-line="191" selection-start-column="36" selection-end-line="195" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -439,12 +432,12 @@
       <workItem from="1495535473925" duration="25000" />
       <workItem from="1495549913985" duration="32000" />
       <workItem from="1495551080573" duration="599000" />
-      <workItem from="1495621197356" duration="4463000" />
+      <workItem from="1495621197356" duration="6566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30721000" />
+    <option name="totallyTimeSpent" value="32824000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="670" extended-state="6" />
@@ -913,8 +906,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/Admin/Resources/views/partials/sidebar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="84" />
+        <state relative-caret-position="86">
+          <caret line="195" column="41" selection-start-line="191" selection-start-column="36" selection-end-line="195" selection-end-column="41" />
           <folding />
         </state>
       </provider>
