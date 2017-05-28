@@ -21,6 +21,7 @@
             Route::get( '/'        , [ 'as' => 'frontend.home.get'    , 'uses' => 'PageController@getHome'    ]);
             Route::get( '/about'   , [ 'as' => 'frontend.about.get'   , 'uses' => 'PageController@getAbout'   ]);
             Route::get( '/gallery' , [ 'as' => 'frontend.gallery.get' , 'uses' => 'PageController@getGallery' ]);
+            Route::get( '/awards' , [ 'as' => 'frontend.gallery.get' , 'uses' => 'PageController@getAwards' ]);
             Route::get( '/instructors' , [ 'as' => 'frontend.instructors.get' , 'uses' => 'PageController@getInstructors' ]);
             Route::get( '/contact' , [ 'as' => 'frontend.contact.get' , 'uses' => 'ContactController@getContact' ]);
             Route::post( '/contact' , [ 'as' => 'frontend.contact.post' , 'uses' => 'ContactController@postContact' ]);

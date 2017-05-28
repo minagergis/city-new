@@ -36,20 +36,28 @@ class PageController extends Controller
         
         // $recent_posts = Post::where('post_status', 'publish')->where('post_type', 'post')->orderby('id', 'DESC')->take(5)->get();
 
-        return view('welcome');
+        return view('sections.home');
     }
     
     public function getAbout()
     {
-        return view('sections.about');
+        //$layout='boards';
+        $layout='mission-vision';
+        return view('sections.about',compact('layout'));
     }
 
     public function getGallery()
     {
-        $gallery = Post::where('post_status', 'publish')->where('post_type', 'gallery')->take(15)->paginate();
+       // $gallery = Post::where('post_status', 'publish')->where('post_type', 'gallery')->take(15)->paginate();
 
-        return view('sections.gallery', compact('gallery'));
+        return view('sections.gallery');
     }
-    
+    public function getAwards()
+    {
+        //$gallery = Post::where('post_status', 'publish')->where('post_type', 'gallery')->take(15)->paginate();
+
+        return view('sections.awards');
+    }
+
  
 }
