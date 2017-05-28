@@ -58,6 +58,18 @@ class PageController extends Controller
 
         return view('sections.awards');
     }
+    public function getProperties()
+    {
+        //$gallery = Post::where('post_status', 'publish')->where('post_type', 'gallery')->take(15)->paginate();
+
+        return view('sections.properties-cat');
+    }
+    public function getSingleProperties($slug)
+    {
+        //$gallery = Post::where('post_status', 'publish')->where('post_type', 'gallery')->take(15)->paginate();
+
+        return view('sections.properties');
+    }
 
  
 }

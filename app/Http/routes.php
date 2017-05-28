@@ -22,7 +22,8 @@
             Route::get( '/about'   , [ 'as' => 'frontend.about.get'   , 'uses' => 'PageController@getAbout'   ]);
             Route::get( '/gallery' , [ 'as' => 'frontend.gallery.get' , 'uses' => 'PageController@getGallery' ]);
             Route::get( '/awards' , [ 'as' => 'frontend.gallery.get' , 'uses' => 'PageController@getAwards' ]);
-            Route::get( '/instructors' , [ 'as' => 'frontend.instructors.get' , 'uses' => 'PageController@getInstructors' ]);
+            Route::get( '/properties' , [ 'as' => 'frontend.properties.get' , 'uses' => 'PageController@getProperties' ]);
+            Route::get( '/properties/{slug}' , [ 'as' => 'frontend.properties.single.get' , 'uses' => 'PageController@getSingleProperties' ]);
             Route::get( '/contact' , [ 'as' => 'frontend.contact.get' , 'uses' => 'ContactController@getContact' ]);
             Route::post( '/contact' , [ 'as' => 'frontend.contact.post' , 'uses' => 'ContactController@postContact' ]);
 
