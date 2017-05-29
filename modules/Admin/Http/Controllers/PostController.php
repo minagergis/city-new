@@ -109,7 +109,7 @@ class PostController extends AdminController
 
     protected function getCategoryType($post_type)
     {
-        $array = ['Properties' => 'properties', 'Gallary' => 'gallary'];
+        $array = ['Properties' => 'properties', 'Gallary' => 'gallary' , 'Award'=>'awards'];
         foreach ($array as $key => $value) {
             if ($key == $post_type) {
                 return $value;

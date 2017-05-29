@@ -13,41 +13,41 @@
 
 
 </head>
-
-<body class="ltr">
+<body class="ltr @if(isset($special_class)) {{$special_class}}@endif">
 <header class="top">
     <div class="container-fluid">
         <div class="inner-header">
-            <div class="logo"><a href=""><img src="{{ asset('public/assets/site') }}/images/logo.png"></a></div>
+            <div class="logo"><a href="{{route('frontend.home.get')}}"><img src="{{ asset('public/assets/site') }}/images/logo.png"></a></div>
             <nav class="nav-menu">
                 <ul class="menu-list">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{route('frontend.home.get')}}">Home</a></li>
                     <li class="sub-menu">
                         <a class="active" href="#">About us</a>
                         <ul>
-                            <li><a href="#">mission & vision</a></li>
-                            <li><a href="#">companies</a></li>
-                            <li><a class="active" href="#">board of directors</a></li>
-                            <li><a href="#">board of directors</a></li>
-                            <li><a href="#">board of directors</a></li>
-                            <li><a href="#">board of directors</a></li>
+                            <li><a href="{{route('frontend.about.get','mission-and-vision')}}">mission & vision</a></li>
+                            {{--<li><a href="#">companies</a></li>--}}
+                            {{--<li><a class="active" href="#">board of directors</a></li>--}}
+                            <li><a href="{{route('frontend.about.get','board-of-directors')}}">board of directors</a></li>
+                            {{--<li><a href="#">board of directors</a></li>--}}
+                            {{--<li><a href="#">board of directors</a></li>--}}
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a href="#">properties</a>
+                        <a>properties</a>
                         <ul>
-                            <li><a href="#">urban resorts</a></li>
-                            <li><a href="#">coastal resorts</a></li>
-                            <li><a href="#">gated resorts</a></li>
-                            <li><a href="#">coastal resorts</a></li>
-                            <li><a href="#">coastal resorts</a></li>
-                            <li><a href="#">coastal resorts</a></li>
+                            <?php
+                            use Modules\Admin\Models\Category;
+                            $prop_cats = Category::where('type', 'properties')->get();
+                            ?>
+                            @foreach($prop_cats as $cat)
+                                <li><a href="{{route('frontend.properties.cat.get',$cat->slug)}}">{{$cat->name}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li><a href="#">gallary</a></li>
                     <li><a href="#">media</a></li>
-                    <li><a href="#">international awards</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{route('frontend.gallery.get')}}">international awards</a></li>
+                    <li><a href="{{route('frontend.contact.get')}}">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="header-controls">

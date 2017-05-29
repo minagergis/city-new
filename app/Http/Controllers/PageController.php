@@ -58,24 +58,14 @@ class PageController extends Controller
     }
     public function getAwards()
     {
-        $awards=Category::get();
-        return view('sections.awards',compact($awards));
-    }
-    public function getProperties()
-    {
-        $urban_resorts=Post::join('post_category','posts.id','=','post_category.post_id')->where('post_category.category_id',1)->get();
-        $coastal_resorts=PostCategory::with('post')->where('category_id', 2)->groupBy('post_id')->get();
-        $gated_communities=PostCategory::with('post')->where('category_id', 3)->groupBy('post_id')->get();
-        $costal_retreats=PostCategory::with('post')->where('category_id', 4)->groupBy('post_id')->get();
-      
-        return view('sections.properties-cat',compact('urban_resorts','gated_communities','coastal_resorts','costal_retreats'));
-    }
-    public function getSingleProperties($slug)
-    {
-        //$gallery = Post::where('post_status', 'publish')->where('post_type', 'gallery')->take(15)->paginate();
+        $awards=Category::where('type','awards')->get();
+        foreach ($awards as $award){
+            $award->posts=Post::join('post_category','posts.id','=','post_category.post_id')->where('post_category.category_id',$award->id)->select('posts.*')->get();
 
-        return view('sections.properties');
+        }
+        return view('sections.awards',compact('awards'));
     }
+
 
  
 }
