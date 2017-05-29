@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 22, 2017 at 05:53 م
--- Server version: 10.1.10-MariaDB
--- PHP Version: 7.0.2
+-- Host: 127.0.0.1
+-- Generation Time: May 30, 2017 at 01:00 AM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -43,7 +43,10 @@ INSERT INTO `category` (`id`, `type`, `media`, `parent`, `created_at`, `updated_
 (1, 'properties', NULL, NULL, '2017-05-20 17:55:22', '2017-05-20 17:55:22'),
 (2, 'properties', NULL, NULL, '2017-05-20 17:56:14', '2017-05-20 17:56:14'),
 (3, 'properties', NULL, NULL, '2017-05-20 17:57:02', '2017-05-20 17:57:02'),
-(4, 'properties', NULL, NULL, '2017-05-20 17:57:47', '2017-05-20 17:57:47');
+(4, 'properties', NULL, NULL, '2017-05-20 17:57:47', '2017-05-20 17:57:47'),
+(5, 'awards', NULL, NULL, '2017-05-29 14:51:25', '2017-05-29 14:51:25'),
+(6, 'awards', NULL, NULL, '2017-05-29 14:52:14', '2017-05-29 14:52:14'),
+(7, 'awards', NULL, NULL, '2017-05-29 14:53:13', '2017-05-29 14:53:13');
 
 -- --------------------------------------------------------
 
@@ -75,7 +78,10 @@ INSERT INTO `category_translations` (`id`, `name`, `slug`, `description`, `autho
 (5, 'كوستال ريتريتس', 'كوستال-ريتريتس', 'كوستال ريتريتس', NULL, 4, 'ar', NULL, NULL),
 (6, 'المجتمعات المسورة', 'المجتمعات-المسورة', 'المجتمعات المسورة', NULL, 3, 'ar', NULL, NULL),
 (7, 'منتجعات ساحليه', 'منتجعات-ساحليه', 'منتجعات ساحليه', NULL, 2, 'ar', NULL, NULL),
-(8, 'المنتجعات الحضرية', 'المنتجعات-الحضرية', 'المنتجعات الحضرية', NULL, 1, 'ar', NULL, NULL);
+(8, 'المنتجعات الحضرية', 'المنتجعات-الحضرية', 'المنتجعات الحضرية', NULL, 1, 'ar', NULL, NULL),
+(9, 'CityStars Hotel', 'CityStars-Hotel', 'Hotel Awards in 2014 InterContnental Cairo CityStars', NULL, 5, 'en', NULL, NULL),
+(10, 'CityStars Properties Awards', 'CityStars-Properties-Awards', '', NULL, 6, 'en', NULL, NULL),
+(11, 'CityStars Hotel', 'CityStars-Hotel-2', 'Hotels Awards in 2014 Holiday Inn Cairo CityStars', NULL, 7, 'en', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -694,10 +700,13 @@ CREATE TABLE `media` (
 --
 
 INSERT INTO `media` (`id`, `guid`, `type`, `name`, `mime_type`, `meta`, `created_at`, `updated_at`) VALUES
-(1, '8e69be45b6d642687e8ec3d8e79a5236d160f8e1.png', 'media', 'Screenshot from 2017-05-11 11-14-13.png', 'image/png', '{"size":95606,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-21 10:48:34', '2017-05-21 10:48:34'),
-(2, 'd133a39e15d01b3f5c912bd01c4cf5ee60bb7dfa.png', 'media', 'dev-mode.png', 'image/png', '{"size":303017,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-21 10:49:00', '2017-05-21 10:49:00'),
-(3, '39017d345e9c9a66cb6c710959351715798a6910.png', 'media', 'Screenshot from 2017-05-09 11-08-57.png', 'image/png', '{"size":21492,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-21 10:49:13', '2017-05-21 10:49:13'),
-(4, '735b99abb1678fa038dff6fae01fe123e73dcab6.jpg', 'media', '16b775ea4fec65c2f11ee028dc50bf16.jpg', 'image/jpeg', '{"size":471130,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-21 11:05:09', '2017-05-21 11:05:09');
+(1, '8e69be45b6d642687e8ec3d8e79a5236d160f8e1.png', 'media', 'Screenshot from 2017-05-11 11-14-13.png', 'image/png', '{\"size\":95606,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-21 10:48:34', '2017-05-21 10:48:34'),
+(2, 'd133a39e15d01b3f5c912bd01c4cf5ee60bb7dfa.png', 'media', 'dev-mode.png', 'image/png', '{\"size\":303017,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-21 10:49:00', '2017-05-21 10:49:00'),
+(3, '39017d345e9c9a66cb6c710959351715798a6910.png', 'media', 'Screenshot from 2017-05-09 11-08-57.png', 'image/png', '{\"size\":21492,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-21 10:49:13', '2017-05-21 10:49:13'),
+(4, '735b99abb1678fa038dff6fae01fe123e73dcab6.jpg', 'media', '16b775ea4fec65c2f11ee028dc50bf16.jpg', 'image/jpeg', '{\"size\":471130,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-21 11:05:09', '2017-05-21 11:05:09'),
+(5, 'c9a52beda866f24d3681a659b24c7d672ef793db.png', 'media', 'awwards-g1-1.png', 'image/png', '{\"size\":27027,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-29 15:24:14', '2017-05-29 15:24:14'),
+(6, 'd99182bb6e23b3a8f337d7e938a84dd929150dec.png', 'media', 'awwards-g1-2.png', 'image/png', '{\"size\":23611,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-29 15:25:07', '2017-05-29 15:25:07'),
+(7, 'fedd3f07f91e1523edbfbef5b3e102d0a092c54a.png', 'media', 'awwards-g1-3.png', 'image/png', '{\"size\":29981,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-29 15:26:40', '2017-05-29 15:26:40');
 
 -- --------------------------------------------------------
 
@@ -883,8 +892,11 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `post_type`, `post_status`, `extra`, `comment_status`, `comment_count`, `media_id`, `created_at`, `updated_at`) VALUES
-(1, 'Properties', 'publish', '{"branch_lat":"31.236638773155164","facilties":["home","gym","shop","pool","drink"]}', 'open', 0, 4, '2017-05-21 11:06:37', '2017-05-21 11:07:12'),
-(2, 'Properties', 'publish', '{"prop_lat":"30.045941677274","prob_long":"31.26418505973811","sales":"0","facilties":["gym","shop","resturant"]}', 'open', 0, 4, '2017-05-22 08:47:29', '2017-05-22 10:46:21');
+(1, 'Properties', 'publish', '{\"branch_lat\":\"31.236638773155164\",\"facilties\":[\"home\",\"gym\",\"shop\",\"pool\",\"drink\"]}', 'open', 0, 4, '2017-05-21 11:06:37', '2017-05-21 11:07:12'),
+(2, 'Properties', 'publish', '{\"prop_lat\":\"30.045941677274\",\"prob_long\":\"31.26418505973811\",\"sales\":\"0\",\"facilties\":[\"gym\",\"shop\",\"resturant\"]}', 'open', 0, 4, '2017-05-22 08:47:29', '2017-05-22 10:46:21'),
+(3, 'Award', 'publish', NULL, 'open', 0, 5, '2017-05-29 15:24:23', '2017-05-29 15:24:23'),
+(4, 'Award', 'publish', NULL, 'open', 0, 6, '2017-05-29 15:25:21', '2017-05-29 15:25:21'),
+(5, 'Award', 'publish', NULL, 'open', 0, 7, '2017-05-29 15:26:48', '2017-05-29 15:26:48');
 
 -- --------------------------------------------------------
 
@@ -912,8 +924,11 @@ CREATE TABLE `posts_translations` (
 
 INSERT INTO `posts_translations` (`id`, `post_title`, `post_excerpt`, `post_content`, `slug`, `post_author`, `post_trans_extra`, `post_id`, `locale`, `created_at`, `updated_at`) VALUES
 (1, 'sdfsdfsdsdf', 'sdfsdfdsfsdfsd', '<p>sfsdsdfsdfcsd</p>', 'trterterterter', 1, NULL, 1, 'en', NULL, NULL),
-(2, 'lets test in english', 'lets test in english lets test in english lets test in english lets test in english', '<p>lets test in english lets test in english lets test in english lets test in english&nbsp;lets test in english lets test in english lets test in english lets test in englishlets test in english lets test in english lets test in english lets test in english&nbsp;lets test in english lets test in english lets test in english lets test in english</p>', 'lets-test-in-english', 1, '{"topic_title_1":"t1","topic_body_1":"<p>11111111111111111111111111<\\/p>\\r\\n","topic_title_2":"t2","topic_body_2":"<p>22222222222222222222222222<\\/p>\\r\\n","topic_title_3":"t3","topic_body_3":"<p>3333333333333333333333333333333333333<\\/p>\\r\\n","topic_title_4":"t4","topic_body_4":"<p>444444444444444444444444444444444444<\\/p>\\r\\n","topic_title_5":"t5","topic_body_5":"<p>55555555555555555555555555<\\/p>\\r\\n","topic_title_6":"t6","topic_body_6":"<p>6666666666666666666666666666<\\/p>\\r\\n"}', 2, 'en', NULL, NULL),
-(4, 'عربي عربي', 'عربي عربي عربي عربي عربي عربي عربي عربي', '<p>عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;</p>', 'lets-test-in-englishصثضص', 1, '{"topic_title_1":"1 \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a ","topic_body_1":"<p>111\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a&nbsp;\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a&nbsp;\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a&nbsp;\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a&nbsp;<\\/p>\\r\\n","topic_title_2":"2\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a ","topic_body_2":"<p>\\u0634\\u0635\\u064a\\u0628\\u0634\\u064a\\u0634\\u0634\\u0634\\u0624\\u0628\\u0636\\u063422<\\/p>\\r\\n","topic_title_3":"5\\u0634\\u0633\\u064a\\u0633\\u0634\\u064a\\u0634","topic_body_3":"<p>\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u063333<\\/p>\\r\\n","topic_title_4":"58\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633","topic_body_4":"<p>\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a55\\u0633\\u0634<\\/p>\\r\\n","topic_title_5":"\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a65","topic_body_5":"<p>\\u0633\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634<\\/p>\\r\\n","topic_title_6":"\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633","topic_body_6":"<p>\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0633\\u0634\\u064a\\u0634\\u0633\\u064a<\\/p>\\r\\n"}', 2, 'ar', NULL, NULL);
+(2, 'lets test in english', 'lets test in english lets test in english lets test in english lets test in english', '<p>lets test in english lets test in english lets test in english lets test in english&nbsp;lets test in english lets test in english lets test in english lets test in englishlets test in english lets test in english lets test in english lets test in english&nbsp;lets test in english lets test in english lets test in english lets test in english</p>', 'lets-test-in-english', 1, '{\"topic_title_1\":\"t1\",\"topic_body_1\":\"<p>11111111111111111111111111<\\/p>\\r\\n\",\"topic_title_2\":\"t2\",\"topic_body_2\":\"<p>22222222222222222222222222<\\/p>\\r\\n\",\"topic_title_3\":\"t3\",\"topic_body_3\":\"<p>3333333333333333333333333333333333333<\\/p>\\r\\n\",\"topic_title_4\":\"t4\",\"topic_body_4\":\"<p>444444444444444444444444444444444444<\\/p>\\r\\n\",\"topic_title_5\":\"t5\",\"topic_body_5\":\"<p>55555555555555555555555555<\\/p>\\r\\n\",\"topic_title_6\":\"t6\",\"topic_body_6\":\"<p>6666666666666666666666666666<\\/p>\\r\\n\"}', 2, 'en', NULL, NULL),
+(4, 'عربي عربي', 'عربي عربي عربي عربي عربي عربي عربي عربي', '<p>عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;</p>', 'lets-test-in-englishصثضص', 1, '{\"topic_title_1\":\"1 \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \",\"topic_body_1\":\"<p>111\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a&nbsp;\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a&nbsp;\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a&nbsp;\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a&nbsp;<\\/p>\\r\\n\",\"topic_title_2\":\"2\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \",\"topic_body_2\":\"<p>\\u0634\\u0635\\u064a\\u0628\\u0634\\u064a\\u0634\\u0634\\u0634\\u0624\\u0628\\u0636\\u063422<\\/p>\\r\\n\",\"topic_title_3\":\"5\\u0634\\u0633\\u064a\\u0633\\u0634\\u064a\\u0634\",\"topic_body_3\":\"<p>\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u063333<\\/p>\\r\\n\",\"topic_title_4\":\"58\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\",\"topic_body_4\":\"<p>\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a55\\u0633\\u0634<\\/p>\\r\\n\",\"topic_title_5\":\"\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a65\",\"topic_body_5\":\"<p>\\u0633\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634<\\/p>\\r\\n\",\"topic_title_6\":\"\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\",\"topic_body_6\":\"<p>\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0633\\u0634\\u064a\\u0634\\u0633\\u064a<\\/p>\\r\\n\"}', 2, 'ar', NULL, NULL),
+(5, 'busness traveller 2014', 'busness traveller 2014', '<p>busness traveller 2014</p>', 'busness-traveller-2014', 1, NULL, 3, 'en', NULL, NULL),
+(6, 'travel advisor', 'travel advisor', '<p>travel advisor</p>', 'travel-advisor', 1, NULL, 4, 'en', NULL, NULL),
+(7, 'cairo 360', 'editor\'s choise award winnerfor 2014 for shootgun', '<p>editor&#39;s choise award winnerfor 2014 for shootgun</p>', 'cairo-360', 1, NULL, 5, 'en', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -935,7 +950,10 @@ CREATE TABLE `post_category` (
 
 INSERT INTO `post_category` (`id`, `post_id`, `category_id`, `created_at`, `updated_at`) VALUES
 (2, 1, 1, NULL, NULL),
-(8, 2, 1, NULL, NULL);
+(8, 2, 1, NULL, NULL),
+(9, 3, 5, NULL, NULL),
+(10, 4, 5, NULL, NULL),
+(11, 5, 5, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1352,12 +1370,12 @@ ALTER TABLE `zone_translations`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `category_translations`
 --
 ALTER TABLE `category_translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `city`
 --
@@ -1392,7 +1410,7 @@ ALTER TABLE `language`
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `multiple_media`
 --
@@ -1407,17 +1425,17 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `posts_translations`
 --
 ALTER TABLE `posts_translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `post_category`
 --
 ALTER TABLE `post_category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `roles`
 --
