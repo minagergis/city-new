@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Models\Category;
+use Modules\Admin\Models\Category;
 
 use Illuminate\Http\Request;
 use Modules\Admin\Models\PostCategory;
@@ -58,9 +58,8 @@ class PageController extends Controller
     }
     public function getAwards()
     {
-        //$gallery = Post::where('post_status', 'publish')->where('post_type', 'gallery')->take(15)->paginate();
-
-        return view('sections.awards');
+        $awards=Category::get();
+        return view('sections.awards',compact($awards));
     }
     public function getProperties()
     {
