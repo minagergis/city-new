@@ -14,31 +14,24 @@
                 </div>
 
                 <div class="awwards">
-
+                    @foreach($awards as $award)
                     <div class="awward-group">
                         <div class="awward-group-title">
-                            <span>Citystars Hotels</span>
-                            <span>Hotels Awards in 2014 InterContinental Cairo Citystars</span>
+                            <span>{{$award->name}}</span>
+                            <span>{{$award->description}}</span>
                         </div>
                         <div class="awward-group-items">
-
+                                @foreach($award->po)
                             <div class="awward-item">
                                 <img src="{{ asset('public/assets/site') }}/images/awwards-g1-1.png">
                                 <p>Best Business Hotel in Cairo 2014 Award</p>
                             </div>
-                            <div class="awward-item">
-                                <img src="{{ asset('public/assets/site') }}/images/awwards-g1-2.png">
-                                <p>Certificate of Excellence</p>
-                            </div>
-                            <div class="awward-item">
-                                <img src="{{ asset('public/assets/site') }}/images/awwards-g1-3.png">
-                                <p>Editor’s Choice Award Winnersfor 2014 for Shogun</p>
-                            </div>
+
 
                         </div>
                     </div>
                     <!-- awwards group -->
-
+                    @endforeach
                     <div class="awward-group">
                         <div class="awward-group-title">
                             <span>Citystars Properties Awards</span>
