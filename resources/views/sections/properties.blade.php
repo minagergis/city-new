@@ -15,10 +15,10 @@
             <div class="container">
                 <div class="subsc-title">
                     <span>{{$PropertyDetails->post_title}}</span>
-                    {{--<span> New Cairo </span>--}}
+                    <span> @if(isset($extra_trans['location'])) {{$extra_trans['location']}} @endif </span>
                 </div>
                 <div class="featured-img">
-                    <img src="{{ asset('public/assets/site') }}/images/prop-inner-in1.jpg">
+                    <img src="{{ asset('public/uploads/full/' . $PropertyDetails->media->guid) }}">
                 </div>
                 <div class="prop-state">{{$PropertyDetails->post_title}}</div>
             </div>
@@ -90,18 +90,9 @@
                         <div class="col-md-3">
                             <div class="small-title">facilities</div>
                             <div class="fac-icons">
-                                <div class="fac-house"></div>
-                                <div class="fac-gym"></div>
-                                <div class="fac-shop"></div>
-                                <div class="fac-pool"></div>
-                                <div class="fac-drink"></div>
-                                <div class="fac-green"></div>
-                                <div class="fac-resturant"></div>
-                                <div class="fac-disabled"></div>
-                                <div class="fac-camera"></div>
-                                <div class="fac-stars"></div>
-                                <div class="fac-wifi"></div>
-                                <div class="fac-parking"></div>
+                                @foreach($extra['facilties'] as $fac)
+                                    <div class="fac-{{$fac}}"></div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="col-md-9">
@@ -109,9 +100,9 @@
                             <div id="map"></div>
                             <script>
                                 function initMap() {
-                                    var uluru = {lat: -25.363, lng: 131.044};
+                                    var uluru = {lat: {{$extra['prop_lat']}}, lng: {{$extra['prob_long']}}};
                                     var map = new google.maps.Map(document.getElementById('map'), {
-                                        zoom: 4,
+                                        zoom: 15,
                                         center: uluru
                                     });
                                     var marker = new google.maps.Marker({
@@ -137,48 +128,18 @@
                             <!-- Carousel items -->
                             <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
                                 <div class="carousel-inner onebyone-carosel">
-                                    <div class="item active">
-                                        <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <a href="#"><img
-                                                        src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg"
-                                                        class="img-responsive center-block"></a>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <a href="#"><img
-                                                        src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg"
-                                                        class="img-responsive center-block"></a>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <a href="#"><img
-                                                        src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg"
-                                                        class="img-responsive center-block"></a>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <a href="#"><img
-                                                        src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg"
-                                                        class="img-responsive center-block"></a>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <a href="#"><img
-                                                        src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg"
-                                                        class="img-responsive center-block"></a>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <a href="#"><img
-                                                        src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg"
-                                                        class="img-responsive center-block"></a>
-                                        </div>
-                                    </div>
+                                    @if(isset($Media))
+                                        @foreach($Media as $image)
+                                            <div class="item active">
+                                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                                    <a><img
+                                                                src="{{ asset('public/uploads/full/' . $image->guid) }}"
+                                                                class="img-responsive center-block"></a>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
+
                                 </div>
                                 <a class="left carousel-control arrows-stars" href="#eventCarousel" data-slide="prev">
                                     <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -202,20 +163,18 @@
     <div class="related-projects">
         <div class="container-fluid">
             <div class="row">
-                <div class="current-title">gated communities</div>
+                <div class="current-title">{{$PropertyDetails->category[0]->name}}</div>
                 <div class="current-projects">
-                    <a href="">bellagio</a>
-                    <a href="">dyar</a>
-                    <a href="">dyar park</a>
-                    <a href="">le reve</a>
-                    <a href="">lavande</a>
-                    <a href="">meadows park</a>
-                    <a href="">royal meadows</a>
+                    @foreach($related_prop as $prop)
+                        @if($prop->post_title!=null && $prop->post_title !='')
+                        <a href="{{route('frontend.properties.single.get',[$PropertyDetails->category[0]->slug,$prop->slug])}}">{{$prop->post_title}}</a>
+                        @endif
+                    @endforeach
                 </div>
                 <div class="other-projects">
-                    <a href="#">urban<br> resorts</a>
-                    <a href="#">coastal<br> resorts</a>
-                    <a href="#">gated<br> resorts</a>
+                    @foreach($categories as $catt)
+                        <a href="{{route('frontend.properties.cat.get',$catt->slug)}}">{{$catt->name}}</a>
+                    @endforeach
                 </div>
             </div>
         </div>

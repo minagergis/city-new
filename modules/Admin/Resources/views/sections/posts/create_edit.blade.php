@@ -92,6 +92,16 @@
                                         @endif
                                     </div>
                                 </div>
+                                    <div class="form-group {{ $errors->has('location') ? ' has-error block' : '' }} slug">
+                                        <div class="col-md-12">
+                                            <input type="text" name="trans_extra[location]" class="form-control" maxlength="255"
+                                                   placeholder="Enter Project Location here"
+                                                   value="{{ isset($extra_pro_status['location']) ? $extra_pro_status['location']: '' }}">
+                                            @if ($errors->has('location'))
+                                                <span class="help-block">{{ $errors->first('location') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
                             @endif
 
                             @if(\Request::get('post_type') == 'Events')

@@ -20,8 +20,11 @@
 
             Route::get( '/'        , [ 'as' => 'frontend.home.get'    , 'uses' => 'PageController@getHome'    ]);
             Route::get( '/about/{slug}'   , [ 'as' => 'frontend.about.get'   , 'uses' => 'PageController@getAbout'   ]);
-            Route::get( '/gallery' , [ 'as' => 'frontend.gallery.get' , 'uses' => 'PageController@getGallery' ]);
-            Route::get( '/awards' , [ 'as' => 'frontend.gallery.get' , 'uses' => 'PageController@getAwards' ]);
+            
+            Route::get( '/gallery/{slug}' , [ 'as' => 'frontend.gallery.get' , 'uses' => 'PageController@getGallery' ]);
+            Route::get( '/gallery/inner/{id}' , [ 'as' => 'frontend.gallery.inner.get' , 'uses' => 'PageController@getGalleryInner' ]);
+            
+            Route::get( '/awards' , [ 'as' => 'frontend.awards.get' , 'uses' => 'PageController@getAwards' ]);
 
             Route::get( '/properties' , [ 'as' => 'frontend.properties.get' , 'uses' => 'PropertiesController@getProperties' ]);
             Route::get( '/properties/{cat}' , [ 'as' => 'frontend.properties.cat.get' , 'uses' => 'PropertiesController@getSingleProperties' ]);

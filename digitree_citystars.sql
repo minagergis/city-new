@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.2
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: May 30, 2017 at 01:00 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Host: localhost
+-- Generation Time: May 30, 2017 at 05:38 PM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 7.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -46,7 +46,11 @@ INSERT INTO `category` (`id`, `type`, `media`, `parent`, `created_at`, `updated_
 (4, 'properties', NULL, NULL, '2017-05-20 17:57:47', '2017-05-20 17:57:47'),
 (5, 'awards', NULL, NULL, '2017-05-29 14:51:25', '2017-05-29 14:51:25'),
 (6, 'awards', NULL, NULL, '2017-05-29 14:52:14', '2017-05-29 14:52:14'),
-(7, 'awards', NULL, NULL, '2017-05-29 14:53:13', '2017-05-29 14:53:13');
+(7, 'awards', NULL, NULL, '2017-05-29 14:53:13', '2017-05-29 14:53:13'),
+(8, 'gallary', NULL, NULL, '2017-05-30 10:32:58', '2017-05-30 10:32:58'),
+(9, 'gallary', NULL, NULL, '2017-05-30 10:33:40', '2017-05-30 10:33:40'),
+(10, 'gallary', NULL, NULL, '2017-05-30 10:34:17', '2017-05-30 10:34:17'),
+(11, 'gallary', NULL, NULL, '2017-05-30 10:35:01', '2017-05-30 10:35:01');
 
 -- --------------------------------------------------------
 
@@ -81,7 +85,15 @@ INSERT INTO `category_translations` (`id`, `name`, `slug`, `description`, `autho
 (8, 'المنتجعات الحضرية', 'المنتجعات-الحضرية', 'المنتجعات الحضرية', NULL, 1, 'ar', NULL, NULL),
 (9, 'CityStars Hotel', 'CityStars-Hotel', 'Hotel Awards in 2014 InterContnental Cairo CityStars', NULL, 5, 'en', NULL, NULL),
 (10, 'CityStars Properties Awards', 'CityStars-Properties-Awards', '', NULL, 6, 'en', NULL, NULL),
-(11, 'CityStars Hotel', 'CityStars-Hotel-2', 'Hotels Awards in 2014 Holiday Inn Cairo CityStars', NULL, 7, 'en', NULL, NULL);
+(11, 'CityStars Hotel', 'CityStars-Hotel-2', 'Hotels Awards in 2014 Holiday Inn Cairo CityStars', NULL, 7, 'en', NULL, NULL),
+(12, 'Urban Resorts', 'urban-resorts-gallary', 'Urban Resorts', NULL, 8, 'en', NULL, NULL),
+(13, 'Gated Communities', 'gated-communities-gallary', 'Gated Communities', NULL, 9, 'en', NULL, NULL),
+(14, 'Coastal Resorts', 'coastal-resorts-gallary', 'Coastal Resorts', NULL, 10, 'en', NULL, NULL),
+(15, 'Costal Retreats', 'coastal-retreats-gallary', 'Costal Retreats', NULL, 11, 'en', NULL, NULL),
+(16, 'كوستال ريتريتس', 'صور-كوستال-ريتريتس', 'كوستال ريتريتس', NULL, 11, 'ar', NULL, NULL),
+(17, 'منتجعات ساحليه', 'صور-منتجعات-ساحليه', 'منتجعات ساحليه', NULL, 10, 'ar', NULL, NULL),
+(18, 'المجتمعات المسورة', 'صور-منتجعات-ساحليه', 'المجتمعات المسورة', NULL, 9, 'ar', NULL, NULL),
+(19, 'المنتجعات الحضرية', 'صور-المنتجعات-الحضرية', 'المنتجعات الحضرية', NULL, 8, 'ar', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -700,13 +712,17 @@ CREATE TABLE `media` (
 --
 
 INSERT INTO `media` (`id`, `guid`, `type`, `name`, `mime_type`, `meta`, `created_at`, `updated_at`) VALUES
-(1, '8e69be45b6d642687e8ec3d8e79a5236d160f8e1.png', 'media', 'Screenshot from 2017-05-11 11-14-13.png', 'image/png', '{\"size\":95606,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-21 10:48:34', '2017-05-21 10:48:34'),
-(2, 'd133a39e15d01b3f5c912bd01c4cf5ee60bb7dfa.png', 'media', 'dev-mode.png', 'image/png', '{\"size\":303017,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-21 10:49:00', '2017-05-21 10:49:00'),
-(3, '39017d345e9c9a66cb6c710959351715798a6910.png', 'media', 'Screenshot from 2017-05-09 11-08-57.png', 'image/png', '{\"size\":21492,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-21 10:49:13', '2017-05-21 10:49:13'),
-(4, '735b99abb1678fa038dff6fae01fe123e73dcab6.jpg', 'media', '16b775ea4fec65c2f11ee028dc50bf16.jpg', 'image/jpeg', '{\"size\":471130,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-21 11:05:09', '2017-05-21 11:05:09'),
-(5, 'c9a52beda866f24d3681a659b24c7d672ef793db.png', 'media', 'awwards-g1-1.png', 'image/png', '{\"size\":27027,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-29 15:24:14', '2017-05-29 15:24:14'),
-(6, 'd99182bb6e23b3a8f337d7e938a84dd929150dec.png', 'media', 'awwards-g1-2.png', 'image/png', '{\"size\":23611,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-29 15:25:07', '2017-05-29 15:25:07'),
-(7, 'fedd3f07f91e1523edbfbef5b3e102d0a092c54a.png', 'media', 'awwards-g1-3.png', 'image/png', '{\"size\":29981,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-29 15:26:40', '2017-05-29 15:26:40');
+(1, '8e69be45b6d642687e8ec3d8e79a5236d160f8e1.png', 'media', 'Screenshot from 2017-05-11 11-14-13.png', 'image/png', '{"size":95606,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-21 10:48:34', '2017-05-21 10:48:34'),
+(2, 'd133a39e15d01b3f5c912bd01c4cf5ee60bb7dfa.png', 'media', 'dev-mode.png', 'image/png', '{"size":303017,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-21 10:49:00', '2017-05-21 10:49:00'),
+(3, '39017d345e9c9a66cb6c710959351715798a6910.png', 'media', 'Screenshot from 2017-05-09 11-08-57.png', 'image/png', '{"size":21492,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-21 10:49:13', '2017-05-21 10:49:13'),
+(4, '735b99abb1678fa038dff6fae01fe123e73dcab6.jpg', 'media', '16b775ea4fec65c2f11ee028dc50bf16.jpg', 'image/jpeg', '{"size":471130,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-21 11:05:09', '2017-05-21 11:05:09'),
+(5, 'c9a52beda866f24d3681a659b24c7d672ef793db.png', 'media', 'awwards-g1-1.png', 'image/png', '{"size":27027,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-29 15:24:14', '2017-05-29 15:24:14'),
+(6, 'd99182bb6e23b3a8f337d7e938a84dd929150dec.png', 'media', 'awwards-g1-2.png', 'image/png', '{"size":23611,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-29 15:25:07', '2017-05-29 15:25:07'),
+(7, 'fedd3f07f91e1523edbfbef5b3e102d0a092c54a.png', 'media', 'awwards-g1-3.png', 'image/png', '{"size":29981,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-29 15:26:40', '2017-05-29 15:26:40'),
+(8, '621041308ee3ba38eef0f74940765ef24ab5cb0f.jpg', 'media', 'prop-inner1.jpg', 'image/jpeg', '{"size":493455,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-30 11:19:32', '2017-05-30 11:19:32'),
+(9, '2519dde3c78c380fd429b58e7825a4bc6c39bb51.jpg', 'media', 'prop-inner2.jpg', 'image/jpeg', '{"size":635982,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-30 11:29:42', '2017-05-30 11:29:42'),
+(10, '70739f5dcba28ffbddbd428ca1161d7396e75c99.jpg', 'media', 'prop-inner3.jpg', 'image/jpeg', '{"size":617344,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-30 11:30:39', '2017-05-30 11:30:39'),
+(11, '39dbb5a4254f8410d3c2f9afc82fcb2a7efaecc0.jpg', 'media', 'prop-inner4.jpg', 'image/jpeg', '{"size":646971,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-30 11:33:06', '2017-05-30 11:33:06');
 
 -- --------------------------------------------------------
 
@@ -759,10 +775,9 @@ CREATE TABLE `multiple_media` (
 --
 
 INSERT INTO `multiple_media` (`id`, `media_id`, `post_id`, `created_at`, `updated_at`) VALUES
-(4, 1, 1, NULL, NULL),
-(5, 2, 1, NULL, NULL),
-(6, 3, 1, NULL, NULL),
-(12, 2, 2, NULL, NULL);
+(13, 11, 6, NULL, NULL),
+(14, 9, 6, NULL, NULL),
+(15, 10, 6, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -892,11 +907,17 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `post_type`, `post_status`, `extra`, `comment_status`, `comment_count`, `media_id`, `created_at`, `updated_at`) VALUES
-(1, 'Properties', 'publish', '{\"branch_lat\":\"31.236638773155164\",\"facilties\":[\"home\",\"gym\",\"shop\",\"pool\",\"drink\"]}', 'open', 0, 4, '2017-05-21 11:06:37', '2017-05-21 11:07:12'),
-(2, 'Properties', 'publish', '{\"prop_lat\":\"30.045941677274\",\"prob_long\":\"31.26418505973811\",\"sales\":\"0\",\"facilties\":[\"gym\",\"shop\",\"resturant\"]}', 'open', 0, 4, '2017-05-22 08:47:29', '2017-05-22 10:46:21'),
 (3, 'Award', 'publish', NULL, 'open', 0, 5, '2017-05-29 15:24:23', '2017-05-29 15:24:23'),
 (4, 'Award', 'publish', NULL, 'open', 0, 6, '2017-05-29 15:25:21', '2017-05-29 15:25:21'),
-(5, 'Award', 'publish', NULL, 'open', 0, 7, '2017-05-29 15:26:48', '2017-05-29 15:26:48');
+(5, 'Award', 'publish', NULL, 'open', 0, 7, '2017-05-29 15:26:48', '2017-05-29 15:26:48'),
+(6, 'Gallary', 'publish', NULL, 'open', 0, 8, '2017-05-30 11:19:50', '2017-05-30 11:20:23'),
+(7, 'Gallary', 'publish', NULL, 'open', 0, 9, '2017-05-30 11:29:53', '2017-05-30 11:29:53'),
+(8, 'Gallary', 'publish', NULL, 'open', 0, 10, '2017-05-30 11:30:47', '2017-05-30 11:30:47'),
+(9, 'Gallary', 'publish', NULL, 'open', 0, 11, '2017-05-30 11:33:14', '2017-05-30 11:33:14'),
+(10, 'Properties', 'publish', '{"prop_lat":"30.0444","prob_long":"31.23569999999995","sales":"1","facilties":["home","gym","shop","pool","drink","green"]}', 'open', 0, 10, '2017-05-30 13:04:43', '2017-05-30 13:04:43'),
+(11, 'Properties', 'publish', '{"prop_lat":"30.04439767817878","prob_long":"31.236354458999585","sales":"1","facilties":["disabled","camera","stars","wifi","parking"]}', 'open', 0, 8, '2017-05-30 13:05:55', '2017-05-30 13:05:55'),
+(12, 'Properties', 'publish', '{"prop_lat":"30.044938661051752","prob_long":"31.228082526397657","sales":"1","facilties":["home","gym","shop","pool","drink","green","resturant","disabled","camera","stars","wifi","parking"]}', 'open', 0, 9, '2017-05-30 13:08:39', '2017-05-30 13:08:39'),
+(13, 'Properties', 'publish', '{"prop_lat":"30.04522192129173","prob_long":"31.237078655433606","sales":"1","facilties":["home","gym"]}', 'open', 0, 11, '2017-05-30 13:09:48', '2017-05-30 13:09:48');
 
 -- --------------------------------------------------------
 
@@ -923,12 +944,18 @@ CREATE TABLE `posts_translations` (
 --
 
 INSERT INTO `posts_translations` (`id`, `post_title`, `post_excerpt`, `post_content`, `slug`, `post_author`, `post_trans_extra`, `post_id`, `locale`, `created_at`, `updated_at`) VALUES
-(1, 'sdfsdfsdsdf', 'sdfsdfdsfsdfsd', '<p>sfsdsdfsdfcsd</p>', 'trterterterter', 1, NULL, 1, 'en', NULL, NULL),
-(2, 'lets test in english', 'lets test in english lets test in english lets test in english lets test in english', '<p>lets test in english lets test in english lets test in english lets test in english&nbsp;lets test in english lets test in english lets test in english lets test in englishlets test in english lets test in english lets test in english lets test in english&nbsp;lets test in english lets test in english lets test in english lets test in english</p>', 'lets-test-in-english', 1, '{\"topic_title_1\":\"t1\",\"topic_body_1\":\"<p>11111111111111111111111111<\\/p>\\r\\n\",\"topic_title_2\":\"t2\",\"topic_body_2\":\"<p>22222222222222222222222222<\\/p>\\r\\n\",\"topic_title_3\":\"t3\",\"topic_body_3\":\"<p>3333333333333333333333333333333333333<\\/p>\\r\\n\",\"topic_title_4\":\"t4\",\"topic_body_4\":\"<p>444444444444444444444444444444444444<\\/p>\\r\\n\",\"topic_title_5\":\"t5\",\"topic_body_5\":\"<p>55555555555555555555555555<\\/p>\\r\\n\",\"topic_title_6\":\"t6\",\"topic_body_6\":\"<p>6666666666666666666666666666<\\/p>\\r\\n\"}', 2, 'en', NULL, NULL),
-(4, 'عربي عربي', 'عربي عربي عربي عربي عربي عربي عربي عربي', '<p>عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;عربي عربي&nbsp;</p>', 'lets-test-in-englishصثضص', 1, '{\"topic_title_1\":\"1 \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \",\"topic_body_1\":\"<p>111\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a&nbsp;\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a&nbsp;\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a&nbsp;\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a&nbsp;<\\/p>\\r\\n\",\"topic_title_2\":\"2\\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \\u0639\\u0631\\u0628\\u064a \",\"topic_body_2\":\"<p>\\u0634\\u0635\\u064a\\u0628\\u0634\\u064a\\u0634\\u0634\\u0634\\u0624\\u0628\\u0636\\u063422<\\/p>\\r\\n\",\"topic_title_3\":\"5\\u0634\\u0633\\u064a\\u0633\\u0634\\u064a\\u0634\",\"topic_body_3\":\"<p>\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u063333<\\/p>\\r\\n\",\"topic_title_4\":\"58\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\",\"topic_body_4\":\"<p>\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a55\\u0633\\u0634<\\/p>\\r\\n\",\"topic_title_5\":\"\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a65\",\"topic_body_5\":\"<p>\\u0633\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634\\u0634<\\/p>\\r\\n\",\"topic_title_6\":\"\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0634\\u0633\",\"topic_body_6\":\"<p>\\u0634\\u0633\\u064a\\u0634\\u0633\\u064a\\u0633\\u0634\\u064a\\u0634\\u0633\\u064a<\\/p>\\r\\n\"}', 2, 'ar', NULL, NULL),
 (5, 'busness traveller 2014', 'busness traveller 2014', '<p>busness traveller 2014</p>', 'busness-traveller-2014', 1, NULL, 3, 'en', NULL, NULL),
 (6, 'travel advisor', 'travel advisor', '<p>travel advisor</p>', 'travel-advisor', 1, NULL, 4, 'en', NULL, NULL),
-(7, 'cairo 360', 'editor\'s choise award winnerfor 2014 for shootgun', '<p>editor&#39;s choise award winnerfor 2014 for shootgun</p>', 'cairo-360', 1, NULL, 5, 'en', NULL, NULL);
+(7, 'cairo 360', 'editor''s choise award winnerfor 2014 for shootgun', '<p>editor&#39;s choise award winnerfor 2014 for shootgun</p>', 'cairo-360', 1, NULL, 5, 'en', NULL, NULL),
+(8, 'title 1', 'exerpt 1', '<p>exerpt 1</p>', 'title-1', 1, NULL, 6, 'en', NULL, NULL),
+(9, 'عنوان 1', 'عنوان 1', '<p>عنوان 1</p>', 'عنوان-1', 1, NULL, 6, 'ar', NULL, NULL),
+(10, 'title 2', 'title 2', '<p>title 2</p>', 'title-2', 1, NULL, 7, 'en', NULL, NULL),
+(11, 'title 3', 'title 3', '<p>title 3</p>', 'title-3', 1, NULL, 8, 'en', NULL, NULL),
+(12, 'title 4', 'title 4', '<p>title 4</p>', 'title-4', 1, NULL, 9, 'en', NULL, NULL),
+(13, 'mina test 1', 'mina test 1', '<p>mina test 1</p>', 'mina-test-1', 1, '{"pro_status":"mina test 1","location":"mina test 1","topic_title_1":"mina test 1","topic_body_1":"<p>mina test 1<\\/p>\\r\\n","topic_title_2":"mina test 1","topic_body_2":"<p>mina test 1<\\/p>\\r\\n","topic_title_3":"","topic_body_3":"","topic_title_4":"","topic_body_4":"","topic_title_5":"","topic_body_5":"","topic_title_6":"","topic_body_6":""}', 10, 'en', NULL, NULL),
+(14, 'mina test 2', 'mina test 2', '<p>mina test 2</p>', 'mina-test-2', 1, '{"pro_status":"mina test 2","location":"mina test 2","topic_title_1":"mina test 2","topic_body_1":"<p>mina test 2<\\/p>\\r\\n","topic_title_2":"mina test 2","topic_body_2":"","topic_title_3":"","topic_body_3":"","topic_title_4":"","topic_body_4":"","topic_title_5":"","topic_body_5":"","topic_title_6":"","topic_body_6":""}', 11, 'en', NULL, NULL),
+(15, 'mina test 4', 'mina test 4', '<p>mina test 4</p>', 'mina-test-4', 1, '{"pro_status":"mina test 4","location":"mina test 4","topic_title_1":"mina test 4","topic_body_1":"<p>mina test 4<\\/p>\\r\\n","topic_title_2":"","topic_body_2":"","topic_title_3":"mina test 4","topic_body_3":"<p>mina test 4<\\/p>\\r\\n","topic_title_4":"","topic_body_4":"","topic_title_5":"","topic_body_5":"","topic_title_6":"","topic_body_6":""}', 12, 'en', NULL, NULL),
+(16, 'mina test 5', 'mina test 5', '<p>mina test 5</p>', 'mina-test-5', 1, '{"pro_status":"mina test 5","location":"mina test 5","topic_title_1":"mina test 5","topic_body_1":"<p>mina test 5<\\/p>\\r\\n","topic_title_2":"","topic_body_2":"","topic_title_3":"","topic_body_3":"","topic_title_4":"","topic_body_4":"","topic_title_5":"","topic_body_5":"","topic_title_6":"","topic_body_6":""}', 13, 'en', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -949,11 +976,17 @@ CREATE TABLE `post_category` (
 --
 
 INSERT INTO `post_category` (`id`, `post_id`, `category_id`, `created_at`, `updated_at`) VALUES
-(2, 1, 1, NULL, NULL),
-(8, 2, 1, NULL, NULL),
 (9, 3, 5, NULL, NULL),
 (10, 4, 5, NULL, NULL),
-(11, 5, 5, NULL, NULL);
+(11, 5, 5, NULL, NULL),
+(14, 7, 8, NULL, NULL),
+(15, 8, 8, NULL, NULL),
+(16, 9, 8, NULL, NULL),
+(17, 6, 8, NULL, NULL),
+(18, 10, 1, NULL, NULL),
+(19, 11, 1, NULL, NULL),
+(20, 12, 1, NULL, NULL),
+(21, 13, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1370,12 +1403,12 @@ ALTER TABLE `zone_translations`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `category_translations`
 --
 ALTER TABLE `category_translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `city`
 --
@@ -1410,12 +1443,12 @@ ALTER TABLE `language`
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `multiple_media`
 --
 ALTER TABLE `multiple_media`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `permissions`
 --
@@ -1425,17 +1458,17 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `posts_translations`
 --
 ALTER TABLE `posts_translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `post_category`
 --
 ALTER TABLE `post_category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `roles`
 --

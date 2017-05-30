@@ -43,9 +43,18 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="#">gallary</a></li>
+                    <li class="sub-menu"><a>gallary</a>
+                        <ul>
+                            <?php
+                            $gallary_cats= Category::where('type', 'gallary')->get();
+                            ?>
+                            @foreach($gallary_cats as $cat_g)
+                                <li><a href="{{route('frontend.gallery.get',$cat_g->slug)}}">{{$cat_g->name}}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
                     <li><a href="#">media</a></li>
-                    <li><a href="{{route('frontend.gallery.get')}}">international awards</a></li>
+                    <li><a href="{{route('frontend.awards.get')}}">international awards</a></li>
                     <li><a href="{{route('frontend.contact.get')}}">Contact Us</a></li>
                 </ul>
             </nav>
