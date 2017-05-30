@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\PostTranslation;
 
-class BlogController extends Controller
+class MediaController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,13 +25,14 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getBlog()
+    public function getMagazine()
     {
-        $posts = Post::where('post_status', 'publish')->where('post_type', 'post')->paginate(10);
+        $pagename='media';
+        /*$posts = Post::where('post_status', 'publish')->where('post_type', 'post')->paginate(10);
         $recent_posts = Post::where('post_status', 'publish')->where('post_type', 'post')->orderby('id', 'DESC')->take(5)->get();
-        $categories = Category::all();
+        $categories = Category::all();*/
 
-        return view('sections.blog', compact('posts', 'recent_posts', 'categories'));
+        return view('sections.magazine',compact('pagename'));
     }
     
     public function getSingleBlog($id)

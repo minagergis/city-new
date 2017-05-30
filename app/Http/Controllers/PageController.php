@@ -37,13 +37,13 @@ class PageController extends Controller
 
     public function getAbout($slug)
     {
-
+        $pagename='about';
         $about = Post::where('post_status', 'publish')->where('post_type', 'about')->where('id', 17)->first();
-        return view('sections.about', compact('about'));
+        return view('sections.about', compact('about','pagename'));
     }
     public function getTeam()
     {
-
+        $pagename='about';
         $one_one = Post::where('post_status', 'publish')->where('post_type', 'team')->where('id', 19)->first();
 
         $two_one = Post::where('post_status', 'publish')->where('post_type', 'team')->where('id', 20)->first();
@@ -58,35 +58,39 @@ class PageController extends Controller
         $four_one = Post::where('post_status', 'publish')->where('post_type', 'team')->where('id', 27)->first();
         $four_two = Post::where('post_status', 'publish')->where('post_type', 'team')->where('id', 28)->first();
 
-        return view('sections.boards', compact('one_one','two_one','two_two','two_three','three_one','three_two','three_three','three_four','four_one','four_two'));
+        return view('sections.boards', compact('pagename','one_one','two_one','two_two','two_three','three_one','three_two','three_three','three_four','four_one','four_two'));
     }
 
     public function getGallery($slug)
     {
+        $pagename='gallary';
         $gallery = Post::join('post_category', 'post_category.post_id', '=', 'posts.id')
             ->join('category_translations', 'category_translations.category_id', '=', 'post_category.category_id')
-            ->where('category_translations.slug', $slug)
+            ->where('category_translations.slug', $slug)->select('posts.*')
             ->get();
-        return view('sections.gallery', compact('gallery'));
+
+       // dd($gallery);
+        return view('sections.gallery', compact('gallery','pagename'));
     }
 
     public function getGalleryInner($id)
     {
-
+        $pagename='gallary';
         $Media = Media::join('multiple_media', 'multiple_media.media_id', '=', 'media.id')->where('multiple_media.post_id', $id)->get();
         // dd($Media);
         $gallary = Post::where('id', $id)->first();
-        return view('sections.gallaryInner', compact('Media', 'gallary'));
+        return view('sections.gallaryInner', compact('Media', 'gallary','pagename'));
     }
 
     public function getAwards()
     {
+        $pagename='awards';
         $awards = Category::where('type', 'awards')->get();
         foreach ($awards as $award) {
             $award->posts = Post::join('post_category', 'posts.id', '=', 'post_category.post_id')->where('post_category.category_id', $award->id)->select('posts.*')->get();
 
         }
-        return view('sections.awards', compact('awards'));
+        return view('sections.awards', compact('awards','pagename'));
     }
 
 

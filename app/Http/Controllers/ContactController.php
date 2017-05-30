@@ -24,7 +24,8 @@ class ContactController extends Controller
      */
     public function getContact()
     {
-        return view('sections.contact');
+        $pagename='contact';
+        return view('sections.contact',compact('pagename'));
     }
 
     public function postContact()

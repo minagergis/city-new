@@ -53,7 +53,7 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="#">media</a></li>
+                    <li><a href="{{route('frontend.magazine.get')}}">media</a></li>
                     <li><a href="{{route('frontend.awards.get')}}">international awards</a></li>
                     <li><a href="{{route('frontend.contact.get')}}">Contact Us</a></li>
                 </ul>

@@ -34,7 +34,7 @@
             Route::get( '/contact' , [ 'as' => 'frontend.contact.get' , 'uses' => 'ContactController@getContact' ]);
             Route::post( '/contact' , [ 'as' => 'frontend.contact.post' , 'uses' => 'ContactController@postContact' ]);
 
-            Route::get( '/blog'    , [ 'as' => 'frontend.blog.get' , 'uses' => 'BlogController@getBlog' ]);
+            Route::get( '/magazine'    , [ 'as' => 'frontend.magazine.get' , 'uses' => 'MediaController@getMagazine' ]);
             Route::get( '/blog/{id}'    , [ 'as' => 'frontend.blog.single.get' , 'uses' => 'BlogController@getSingleBlog' ]);
             
         });

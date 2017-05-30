@@ -23,18 +23,15 @@
                                     <img src="{{ asset('public/assets/site') }}/images/prop-inner1.jpg"
                                          class="img-responsive scallable">
                                     <div class="gallary-title">
-                                        <p>dyar park 1</p>
+                                        <p>{{$gall->post_title}}</p>
                                     </div>
                                     <div class="gallary-desc">
                                         <div class="gallary-item-hover">
                                             <div>
-                                                <p class="gallary-name">dyar park 1
+                                                <p class="gallary-name">{{$gall->post_title}}
                                                     <span class='read-more' url-action="{{route('frontend.gallery.inner.get',$gall->post_id)}}">read more</span>
                                                 </p>
-                                                <p class="gallary-description">Lorem ipsum dolor sit amet, consectetur
-                                                    adipisicing
-                                                    elit, sed do eiusmod
-                                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                <p class="gallary-description">{{$gall->post_excerpt}}</p>
                                             </div>
                                         </div>
                                     </div>

@@ -22,18 +22,14 @@
                 <ul class="menu-list">
                     <li><a href="{{route('frontend.home.get')}}">Home</a></li>
                     <li class="sub-menu">
-                        <a class="active" href="#">About us</a>
+                        <a @if($pagename=='about') class="active" @endif href="#">About us</a>
                         <ul>
                             <li><a href="{{route('frontend.about.get','mission-and-vision')}}">mission & vision</a></li>
-                            {{--<li><a href="#">companies</a></li>--}}
-                            {{--<li><a class="active" href="#">board of directors</a></li>--}}
                             <li><a href="{{route('frontend.board.get')}}">board of directors</a></li>
-                            {{--<li><a href="#">board of directors</a></li>--}}
-                            {{--<li><a href="#">board of directors</a></li>--}}
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a>properties</a>
+                        <a @if($pagename=='properties') class="active" @endif >properties</a>
                         <ul>
                             <?php
                             use Modules\Admin\Models\Category;
@@ -44,7 +40,7 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li class="sub-menu"><a>gallary</a>
+                    <li @if($pagename=='gallary') class="active" @endif class="sub-menu"><a>gallary</a>
                         <ul>
                             <?php
                             $gallary_cats= Category::where('type', 'gallary')->get();
@@ -54,9 +50,9 @@
                                 @endforeach
                         </ul>
                     </li>
-                    <li><a href="#">media</a></li>
-                    <li><a href="{{route('frontend.awards.get')}}">international awards</a></li>
-                    <li><a href="{{route('frontend.contact.get')}}">Contact Us</a></li>
+                    <li><a @if($pagename=='media') class="active" @endif href="{{route('frontend.magazine.get')}}">media</a></li>
+                    <li><a @if($pagename=='awards') class="active" @endif href="{{route('frontend.awards.get')}}">international awards</a></li>
+                    <li><a @if($pagename=='contact') class="active" @endif href="{{route('frontend.contact.get')}}">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="header-controls">
