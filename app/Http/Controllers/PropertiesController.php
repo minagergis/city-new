@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\App;
 use Mcamara\LaravelLocalization\LaravelLocalization;
 use Modules\Admin\Models\Category;
 use Modules\Admin\Models\CategoryTranslation;
+use Modules\Admin\Models\Media;
 use Modules\Admin\Models\PostCategory;
 use Modules\Admin\Models\Post;
 
@@ -37,14 +38,20 @@ class PropertiesController extends Controller
     {
         $category=CategoryTranslation::where('slug',$slug)->first();
         $props=Post::join('post_category','posts.id','=','post_category.post_id')->where('post_category.category_id',$category->category_id)->paginate(5);
+        return view('sections.inner-prop-cat',compact('props'));
 
-        return view('sections.properties',compact($props));
     }
     public function getInnerProperties($cat,$slug)
     {
-        //$gallery = Post::where('post_status', 'publish')->where('post_type', 'gallery')->take(15)->paginate();
+        $PropertyDetails = Post::join('posts_translations','posts.id','=','posts_translations.post_id')
+            ->where('posts.post_status', 'publish')
+            ->where('posts.post_type', 'Properties')
+            ->where('posts_translations.slug', $slug)
+            ->first();
+        $Media=Media::join('multiple_media','multiple_media.media.id','=','media.id')->where('multiple_media.post_id',$PropertyDetails->id)->get();
 
-        return view('sections.inner-prop-cat');
+        $special_class='ofwhite';
+        return view('sections.properties',compact('special_class','PropertyDetails','Media'));
     }
 
 

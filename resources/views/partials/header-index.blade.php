@@ -23,7 +23,7 @@
                 <ul class="menu-list">
                     <li><a class="active" href="{{route('frontend.home.get')}}">Home</a></li>
                     <li class="sub-menu">
-                        <a href="#">About us</a>
+                        <a>About us</a>
                         <ul>
                             <li><a href="{{route('frontend.about.get','mission-and-vision')}}">mission & vision</a></li>
                             {{--<li><a href="{{route('frontend.about.get','companies')}}">companies</a></li>--}}
@@ -46,7 +46,7 @@
                     <li><a href="#">gallary</a></li>
                     <li><a href="#">media</a></li>
                     <li><a href="{{route('frontend.gallery.get')}}">international awards</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{route('frontend.contact.get')}}">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="header-controls">

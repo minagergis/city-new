@@ -5,19 +5,22 @@
 @endsection
 
 @section('content')
-
+    <?php
+    $extra = isset($PropertyDetails) ? json_decode($PropertyDetails->extra, true) : [];
+    $extra_trans = isset($PropertyDetails) ? json_decode($PropertyDetails->post_trans_extra, true) : [];
+    ?>
 
     <div class="page-content">
         <div class="inner-page">
             <div class="container">
                 <div class="subsc-title">
-                    <span>La Fontaine</span>
-                    <span> New Cairo </span>
+                    <span>{{$PropertyDetails->post_title}}</span>
+                    {{--<span> New Cairo </span>--}}
                 </div>
                 <div class="featured-img">
                     <img src="{{ asset('public/assets/site') }}/images/prop-inner-in1.jpg">
                 </div>
-                <div class="prop-state">sales now open</div>
+                <div class="prop-state">{{$PropertyDetails->post_title}}</div>
             </div>
 
             <div class="tabs-prop">
@@ -26,36 +29,51 @@
                         <div class="col-xs-3"> <!-- required for floating -->
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs tabs-left sideways">
-                                <li class="active"><a href="#1-v" data-toggle="tab">location & access</a></li>
-                                <li><a href="#2-v" data-toggle="tab">residential</a></li>
-                                <li><a href="#3-v" data-toggle="tab">offices park</a></li>
-                                <li><a href="#4-v" data-toggle="tab">retial & shopping </a></li>
-                                <li><a href="#5-v" data-toggle="tab">hotels & resturants </a></li>
+                                @if(isset($extra_trans['topic_title_1'])&& $extra_trans['topic_title_1'] !='' && $extra_trans['topic_title_1'] !=null)
+                                    <li class="active"><a href="#1-v"
+                                                          data-toggle="tab">{{$extra_trans['topic_title_1']}}</a></li>
+                                @endif
+                                @if(isset($extra_trans['topic_title_2'])&& $extra_trans['topic_title_2'] !='' && $extra_trans['topic_title_2'] !=null)
+                                    <li><a href="#2-v" data-toggle="tab">{{$extra_trans['topic_title_2']}}</a></li>
+                                @endif
+                                @if(isset($extra_trans['topic_title_3'])&& $extra_trans['topic_title_3'] !='' && $extra_trans['topic_title_3'] !=null)
+                                    <li><a href="#3-v" data-toggle="tab">{{$extra_trans['topic_title_3']}}</a></li>
+                                @endif
+                                @if(isset($extra_trans['topic_title_4'])&& $extra_trans['topic_title_4'] !='' && $extra_trans['topic_title_4'] !=null)
+                                    <li><a href="#4-v" data-toggle="tab">{{$extra_trans['topic_title_4']}}</a></li>
+                                @endif
+                                @if(isset($extra_trans['topic_title_5'])&& $extra_trans['topic_title_5'] !='' && $extra_trans['topic_title_5'] !=null)
+                                    <li><a href="#5-v" data-toggle="tab">{{$extra_trans['topic_title_5']}}</a></li>
+                                @endif
+                                @if(isset($extra_trans['topic_title_6'])&& $extra_trans['topic_title_6'] !='' && $extra_trans['topic_title_6'] !=null)
+                                    <li><a href="#6-v" data-toggle="tab">{{$extra_trans['topic_title_6']}}</a></li>
+                                @endif
                             </ul>
                         </div>
 
                         <div class="col-xs-9">
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <div class="tab-pane active" id="1-v">
-                                    <img src="{{ asset('public/assets/site') }}/images/tabs-img-1.jpg">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                                <div class="tab-pane" id="2-v">Profile Tab.</div>
-                                <div class="tab-pane" id="3-v">Messages Tab.</div>
-                                <div class="tab-pane" id="4-v">Settings Tab.</div>
-                                <div class="tab-pane" id="5-v">Settings Tab.</div>
+                                @if(isset($extra_trans['topic_title_1'])&& $extra_trans['topic_title_1'] !='' && $extra_trans['topic_title_1'] !=null)
+                                    <div class="tab-pane active" id="1-v">
+                                        {!! $extra_trans['topic_body_1'] !!}
+                                    </div>
+                                @endif
+                                @if(isset($extra_trans['topic_title_2'])&& $extra_trans['topic_title_2'] !='' && $extra_trans['topic_title_2'] !=null)
+                                    <div class="tab-pane" id="2-v">{!! $extra_trans['topic_body_2'] !!}</div>
+                                @endif
+                                @if(isset($extra_trans['topic_title_3'])&& $extra_trans['topic_title_3'] !='' && $extra_trans['topic_title_3'] !=null)
+                                    <div class="tab-pane" id="3-v">{!! $extra_trans['topic_body_3'] !!}</div>
+                                @endif
+                                @if(isset($extra_trans['topic_title_4'])&& $extra_trans['topic_title_4'] !='' && $extra_trans['topic_title_4'] !=null)
+                                    <div class="tab-pane" id="4-v">{!! $extra_trans['topic_body_4'] !!}</div>
+                                @endif
+                                @if(isset($extra_trans['topic_title_5'])&& $extra_trans['topic_title_5'] !='' && $extra_trans['topic_title_5'] !=null)
+                                    <div class="tab-pane" id="5-v">{!! $extra_trans['topic_body_5'] !!}</div>
+                                @endif
+                                @if(isset($extra_trans['topic_title_6'])&& $extra_trans['topic_title_6'] !='' && $extra_trans['topic_title_6'] !=null)
+                                    <div class="tab-pane" id="6-v">{!! $extra_trans['topic_body_6'] !!}</div>
+                                @endif
                             </div>
                         </div>
 
@@ -64,7 +82,6 @@
                 </div>
             </div>
             <!--  tabs -->
-
 
 
             <div class="tabs-prop">
@@ -104,7 +121,8 @@
 
                                 }
                             </script>
-                            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq8vfrl5gdXny91cZdOIDGptxdRb3VUg8&callback=initMap"></script>
+                            <script async defer
+                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq8vfrl5gdXny91cZdOIDGptxdRb3VUg8&callback=initMap"></script>
                         </div>
                     </div>
                 </div>
@@ -121,32 +139,44 @@
                                 <div class="carousel-inner onebyone-carosel">
                                     <div class="item active">
                                         <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <a href="#"><img src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg" class="img-responsive center-block"></a>
+                                            <a href="#"><img
+                                                        src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg"
+                                                        class="img-responsive center-block"></a>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <a href="#"><img src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg" class="img-responsive center-block"></a>
+                                            <a href="#"><img
+                                                        src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg"
+                                                        class="img-responsive center-block"></a>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <a href="#"><img src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg" class="img-responsive center-block"></a>
+                                            <a href="#"><img
+                                                        src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg"
+                                                        class="img-responsive center-block"></a>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <a href="#"><img src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg" class="img-responsive center-block"></a>
+                                            <a href="#"><img
+                                                        src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg"
+                                                        class="img-responsive center-block"></a>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <a href="#"><img src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg" class="img-responsive center-block"></a>
+                                            <a href="#"><img
+                                                        src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg"
+                                                        class="img-responsive center-block"></a>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <a href="#"><img src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg" class="img-responsive center-block"></a>
+                                            <a href="#"><img
+                                                        src="{{ asset('public/assets/site') }}/images/prop-gallary1.jpg"
+                                                        class="img-responsive center-block"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -163,7 +193,6 @@
                 </div>
             </div>
             <!-- gallary slider -->
-
 
 
         </div>
