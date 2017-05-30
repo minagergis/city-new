@@ -27,7 +27,7 @@
                         <ul>
                             <li><a href="{{route('frontend.about.get','mission-and-vision')}}">mission & vision</a></li>
                             {{--<li><a href="{{route('frontend.about.get','companies')}}">companies</a></li>--}}
-                            <li><a href="{{route('frontend.about.get','board-of-directors')}}">board of directors</a>
+                            <li><a href="{{route('frontend.board.get')}}">board of directors</a>
                             </li>
                         </ul>
                     </li>

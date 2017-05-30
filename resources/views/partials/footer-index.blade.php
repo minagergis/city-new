@@ -1,5 +1,6 @@
 <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
 <script src="{{ asset('public/assets/site') }}/js/index.js"></script>
+<script src="{{ asset('public/assets/site') }}/js/backend.js"></script>
 
 </body>
 </html>

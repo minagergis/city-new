@@ -20,7 +20,8 @@
 
             Route::get( '/'        , [ 'as' => 'frontend.home.get'    , 'uses' => 'PageController@getHome'    ]);
             Route::get( '/about/{slug}'   , [ 'as' => 'frontend.about.get'   , 'uses' => 'PageController@getAbout'   ]);
-            
+            Route::get( '/board-of-director'   , [ 'as' => 'frontend.board.get'   , 'uses' => 'PageController@getTeam'   ]);
+
             Route::get( '/gallery/{slug}' , [ 'as' => 'frontend.gallery.get' , 'uses' => 'PageController@getGallery' ]);
             Route::get( '/gallery/inner/{id}' , [ 'as' => 'frontend.gallery.inner.get' , 'uses' => 'PageController@getGalleryInner' ]);
             

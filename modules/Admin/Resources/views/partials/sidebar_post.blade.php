@@ -80,6 +80,38 @@
     </div>
 </div>
 
+@if(\Request::get('post_type') == 'Slider')
+    <?php
+    $post_type = \Request::get('post_type');
+    $extra_slider = isset($post) ? json_decode($post->extra, true) : [];
+    ?>
+    <div class="portlet box green-meadow attributes">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-cogs"></i>Slider Type
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
+                <a href="javascript:;" class="reload" data-original-title="" title=""> </a>
+            </div>
+        </div>
+        <div class="portlet-body lang">
+            <div class="row">
+                <div class="col-md-12"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <select name="extra[main]" id="" class="form-control">
+                        <option value="1" @if(isset($extra_slider['main']) && $extra_slider['main'] == 1) selected @endif>Main Slider</option>
+                        <option value="0" @if(isset($extra_slider['main']) && $extra_slider['main'] == 0) selected @endif>Normal Slider</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </div>
+@endif
+
 @if(\Request::get('post_type') == 'Properties')
     <?php
     $post_type = \Request::get('post_type');
@@ -102,8 +134,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <select name="extra[sales]" id="" class="form-control">
-                        <option value="1" @if(isset($extra_sales['sales']) && $extra_sales['sales'] == 1) selected @endif>Sales Open Now</option>
-                        <option value="0" @if(isset($extra_sales['sales']) && $extra_sales['sales'] == 0) selected @endif>Sales Closed Now</option>
+                        <option value="1"
+                                @if(isset($extra_sales['sales']) && $extra_sales['sales'] == 1) selected @endif>Sales
+                            Open Now
+                        </option>
+                        <option value="0"
+                                @if(isset($extra_sales['sales']) && $extra_sales['sales'] == 0) selected @endif>Sales
+                            Closed Now
+                        </option>
                     </select>
                 </div>
             </div>
@@ -202,21 +240,21 @@
                         <?php
                         $post_type = \Request::get('post_type');
                         $extra_fac = isset($post) ? json_decode($post->extra, true) : [];
-                           // dd(in_array('gym',$extra_fac['facilties']));
+                        // dd(in_array('gym',$extra_fac['facilties']));
 
                         $facilties_menu = array(
-                                ['id' => 'home', 'name' => 'home'],
-                                ['id' => 'gym', 'name' => 'gym'],
-                                ['id' => 'shop', 'name' => 'shop'],
-                                ['id' => 'pool', 'name' => 'pool'],
-                                ['id' => 'drink', 'name' => 'drink'],
-                                ['id' => 'green', 'name' => 'green'],
-                                ['id' => 'resturant', 'name' => 'resturant'],
-                                ['id' => 'disabled', 'name' => 'disabled'],
-                                ['id' => 'camera', 'name' => 'camera'],
-                                ['id' => 'stars', 'name' => 'stars'],
-                                ['id' => 'wifi', 'name' => 'wifi'],
-                                ['id' => 'parking', 'name' => 'parking'],
+                            ['id' => 'home', 'name' => 'home'],
+                            ['id' => 'gym', 'name' => 'gym'],
+                            ['id' => 'shop', 'name' => 'shop'],
+                            ['id' => 'pool', 'name' => 'pool'],
+                            ['id' => 'drink', 'name' => 'drink'],
+                            ['id' => 'green', 'name' => 'green'],
+                            ['id' => 'resturant', 'name' => 'resturant'],
+                            ['id' => 'disabled', 'name' => 'disabled'],
+                            ['id' => 'camera', 'name' => 'camera'],
+                            ['id' => 'stars', 'name' => 'stars'],
+                            ['id' => 'wifi', 'name' => 'wifi'],
+                            ['id' => 'parking', 'name' => 'parking'],
                         );
 
                         ?>
@@ -227,7 +265,7 @@
                                 <input type="checkbox" id="checkbox{{ $facilty['id'] }}" class="md-check"
                                        name="extra[facilties][]"
                                        value="{{ $facilty['id'] }}"
-                                         @if(isset($extra_fac['facilties']) && in_array($facilty['id'], $extra_fac['facilties'])) checked  @endif  >
+                                       @if(isset($extra_fac['facilties']) && in_array($facilty['id'], $extra_fac['facilties'])) checked @endif >
 
 
                                 <label for="checkbox{{ $facilty['id'] }}">
