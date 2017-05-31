@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 30, 2017 at 05:38 PM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 7.0.2
+-- Host: 127.0.0.1
+-- Generation Time: May 31, 2017 at 02:13 AM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -712,17 +712,21 @@ CREATE TABLE `media` (
 --
 
 INSERT INTO `media` (`id`, `guid`, `type`, `name`, `mime_type`, `meta`, `created_at`, `updated_at`) VALUES
-(1, '8e69be45b6d642687e8ec3d8e79a5236d160f8e1.png', 'media', 'Screenshot from 2017-05-11 11-14-13.png', 'image/png', '{"size":95606,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-21 10:48:34', '2017-05-21 10:48:34'),
-(2, 'd133a39e15d01b3f5c912bd01c4cf5ee60bb7dfa.png', 'media', 'dev-mode.png', 'image/png', '{"size":303017,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-21 10:49:00', '2017-05-21 10:49:00'),
-(3, '39017d345e9c9a66cb6c710959351715798a6910.png', 'media', 'Screenshot from 2017-05-09 11-08-57.png', 'image/png', '{"size":21492,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-21 10:49:13', '2017-05-21 10:49:13'),
-(4, '735b99abb1678fa038dff6fae01fe123e73dcab6.jpg', 'media', '16b775ea4fec65c2f11ee028dc50bf16.jpg', 'image/jpeg', '{"size":471130,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-21 11:05:09', '2017-05-21 11:05:09'),
-(5, 'c9a52beda866f24d3681a659b24c7d672ef793db.png', 'media', 'awwards-g1-1.png', 'image/png', '{"size":27027,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-29 15:24:14', '2017-05-29 15:24:14'),
-(6, 'd99182bb6e23b3a8f337d7e938a84dd929150dec.png', 'media', 'awwards-g1-2.png', 'image/png', '{"size":23611,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-29 15:25:07', '2017-05-29 15:25:07'),
-(7, 'fedd3f07f91e1523edbfbef5b3e102d0a092c54a.png', 'media', 'awwards-g1-3.png', 'image/png', '{"size":29981,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-29 15:26:40', '2017-05-29 15:26:40'),
-(8, '621041308ee3ba38eef0f74940765ef24ab5cb0f.jpg', 'media', 'prop-inner1.jpg', 'image/jpeg', '{"size":493455,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-30 11:19:32', '2017-05-30 11:19:32'),
-(9, '2519dde3c78c380fd429b58e7825a4bc6c39bb51.jpg', 'media', 'prop-inner2.jpg', 'image/jpeg', '{"size":635982,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-30 11:29:42', '2017-05-30 11:29:42'),
-(10, '70739f5dcba28ffbddbd428ca1161d7396e75c99.jpg', 'media', 'prop-inner3.jpg', 'image/jpeg', '{"size":617344,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-30 11:30:39', '2017-05-30 11:30:39'),
-(11, '39dbb5a4254f8410d3c2f9afc82fcb2a7efaecc0.jpg', 'media', 'prop-inner4.jpg', 'image/jpeg', '{"size":646971,"dimensions":{"large":{"width":"1078","height":"551"},"medium":{"width":"682","height":"294"},"thumbnail":{"width":"150","height":"150"}}}', '2017-05-30 11:33:06', '2017-05-30 11:33:06');
+(1, '8e69be45b6d642687e8ec3d8e79a5236d160f8e1.png', 'media', 'Screenshot from 2017-05-11 11-14-13.png', 'image/png', '{\"size\":95606,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-21 10:48:34', '2017-05-21 10:48:34'),
+(2, 'd133a39e15d01b3f5c912bd01c4cf5ee60bb7dfa.png', 'media', 'dev-mode.png', 'image/png', '{\"size\":303017,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-21 10:49:00', '2017-05-21 10:49:00'),
+(3, '39017d345e9c9a66cb6c710959351715798a6910.png', 'media', 'Screenshot from 2017-05-09 11-08-57.png', 'image/png', '{\"size\":21492,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-21 10:49:13', '2017-05-21 10:49:13'),
+(4, '735b99abb1678fa038dff6fae01fe123e73dcab6.jpg', 'media', '16b775ea4fec65c2f11ee028dc50bf16.jpg', 'image/jpeg', '{\"size\":471130,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-21 11:05:09', '2017-05-21 11:05:09'),
+(5, 'c9a52beda866f24d3681a659b24c7d672ef793db.png', 'media', 'awwards-g1-1.png', 'image/png', '{\"size\":27027,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-29 15:24:14', '2017-05-29 15:24:14'),
+(6, 'd99182bb6e23b3a8f337d7e938a84dd929150dec.png', 'media', 'awwards-g1-2.png', 'image/png', '{\"size\":23611,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-29 15:25:07', '2017-05-29 15:25:07'),
+(7, 'fedd3f07f91e1523edbfbef5b3e102d0a092c54a.png', 'media', 'awwards-g1-3.png', 'image/png', '{\"size\":29981,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-29 15:26:40', '2017-05-29 15:26:40'),
+(8, '621041308ee3ba38eef0f74940765ef24ab5cb0f.jpg', 'media', 'prop-inner1.jpg', 'image/jpeg', '{\"size\":493455,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-30 11:19:32', '2017-05-30 11:19:32'),
+(9, '2519dde3c78c380fd429b58e7825a4bc6c39bb51.jpg', 'media', 'prop-inner2.jpg', 'image/jpeg', '{\"size\":635982,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-30 11:29:42', '2017-05-30 11:29:42'),
+(10, '70739f5dcba28ffbddbd428ca1161d7396e75c99.jpg', 'media', 'prop-inner3.jpg', 'image/jpeg', '{\"size\":617344,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-30 11:30:39', '2017-05-30 11:30:39'),
+(11, '39dbb5a4254f8410d3c2f9afc82fcb2a7efaecc0.jpg', 'media', 'prop-inner4.jpg', 'image/jpeg', '{\"size\":646971,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-30 11:33:06', '2017-05-30 11:33:06'),
+(12, '57122e29e04295747608266f45aac17d71224f75.jpg', 'media', 'pic4.jpg', 'image/jpeg', '{\"size\":908271,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-30 18:45:52', '2017-05-30 18:45:52'),
+(13, '2228adf48a152f0d3f0373c74f218ab6d0571b56.jpg', 'media', 'pic.jpg', 'image/jpeg', '{\"size\":779848,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-30 18:51:55', '2017-05-30 18:51:55'),
+(14, '47a69c85f758937ee07b744125bb34b0799133c9.jpg', 'media', 'pic6.jpg', 'image/jpeg', '{\"size\":826000,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-30 18:53:39', '2017-05-30 18:53:39'),
+(15, 'd74e3773e89570075f0d53b5974ddad8366a2955.jpg', 'media', 'mission.jpg', 'image/jpeg', '{\"size\":328766,\"dimensions\":{\"large\":{\"width\":\"1078\",\"height\":\"551\"},\"medium\":{\"width\":\"682\",\"height\":\"294\"},\"thumbnail\":{\"width\":\"150\",\"height\":\"150\"}}}', '2017-05-30 19:53:49', '2017-05-30 19:53:49');
 
 -- --------------------------------------------------------
 
@@ -914,10 +918,24 @@ INSERT INTO `posts` (`id`, `post_type`, `post_status`, `extra`, `comment_status`
 (7, 'Gallary', 'publish', NULL, 'open', 0, 9, '2017-05-30 11:29:53', '2017-05-30 11:29:53'),
 (8, 'Gallary', 'publish', NULL, 'open', 0, 10, '2017-05-30 11:30:47', '2017-05-30 11:30:47'),
 (9, 'Gallary', 'publish', NULL, 'open', 0, 11, '2017-05-30 11:33:14', '2017-05-30 11:33:14'),
-(10, 'Properties', 'publish', '{"prop_lat":"30.0444","prob_long":"31.23569999999995","sales":"1","facilties":["home","gym","shop","pool","drink","green"]}', 'open', 0, 10, '2017-05-30 13:04:43', '2017-05-30 13:04:43'),
-(11, 'Properties', 'publish', '{"prop_lat":"30.04439767817878","prob_long":"31.236354458999585","sales":"1","facilties":["disabled","camera","stars","wifi","parking"]}', 'open', 0, 8, '2017-05-30 13:05:55', '2017-05-30 13:05:55'),
-(12, 'Properties', 'publish', '{"prop_lat":"30.044938661051752","prob_long":"31.228082526397657","sales":"1","facilties":["home","gym","shop","pool","drink","green","resturant","disabled","camera","stars","wifi","parking"]}', 'open', 0, 9, '2017-05-30 13:08:39', '2017-05-30 13:08:39'),
-(13, 'Properties', 'publish', '{"prop_lat":"30.04522192129173","prob_long":"31.237078655433606","sales":"1","facilties":["home","gym"]}', 'open', 0, 11, '2017-05-30 13:09:48', '2017-05-30 13:09:48');
+(10, 'Properties', 'publish', '{\"prop_lat\":\"30.0444\",\"prob_long\":\"31.23569999999995\",\"sales\":\"1\",\"facilties\":[\"home\",\"gym\",\"shop\",\"pool\",\"drink\",\"green\"]}', 'open', 0, 10, '2017-05-30 13:04:43', '2017-05-30 13:04:43'),
+(11, 'Properties', 'publish', '{\"prop_lat\":\"30.04439767817878\",\"prob_long\":\"31.236354458999585\",\"sales\":\"1\",\"facilties\":[\"disabled\",\"camera\",\"stars\",\"wifi\",\"parking\"]}', 'open', 0, 8, '2017-05-30 13:05:55', '2017-05-30 13:05:55'),
+(12, 'Properties', 'publish', '{\"prop_lat\":\"30.044938661051752\",\"prob_long\":\"31.228082526397657\",\"sales\":\"1\",\"facilties\":[\"home\",\"gym\",\"shop\",\"pool\",\"drink\",\"green\",\"resturant\",\"disabled\",\"camera\",\"stars\",\"wifi\",\"parking\"]}', 'open', 0, 9, '2017-05-30 13:08:39', '2017-05-30 13:08:39'),
+(13, 'Properties', 'publish', '{\"prop_lat\":\"30.04522192129173\",\"prob_long\":\"31.237078655433606\",\"sales\":\"1\",\"facilties\":[\"home\",\"gym\"]}', 'open', 0, 11, '2017-05-30 13:09:48', '2017-05-30 13:09:48'),
+(14, 'Slider', 'publish', '{\"main\":\"0\"}', 'open', 0, 12, '2017-05-30 18:47:00', '2017-05-30 18:50:01'),
+(15, 'Slider', 'publish', '{\"main\":\"1\"}', 'open', 0, 13, '2017-05-30 18:52:26', '2017-05-30 18:52:27'),
+(16, 'Slider', 'publish', '{\"main\":\"0\"}', 'open', 0, 14, '2017-05-30 18:53:48', '2017-05-30 18:53:48'),
+(17, 'About', 'publish', NULL, 'open', 0, 15, '2017-05-30 19:49:36', '2017-05-30 19:54:21'),
+(19, 'Team', 'publish', NULL, 'open', 0, NULL, '2017-05-30 20:13:34', '2017-05-30 20:13:34'),
+(20, 'Team', 'publish', NULL, 'open', 0, NULL, '2017-05-30 20:15:10', '2017-05-30 20:15:10'),
+(21, 'Team', 'publish', NULL, 'open', 0, NULL, '2017-05-30 20:16:36', '2017-05-30 20:16:36'),
+(22, 'Team', 'publish', NULL, 'open', 0, NULL, '2017-05-30 20:17:48', '2017-05-30 20:17:48'),
+(23, 'Team', 'publish', NULL, 'open', 0, NULL, '2017-05-30 20:19:47', '2017-05-30 20:19:47'),
+(24, 'Team', 'publish', NULL, 'open', 0, NULL, '2017-05-30 20:20:34', '2017-05-30 20:20:34'),
+(25, 'Team', 'publish', NULL, 'open', 0, NULL, '2017-05-30 20:21:08', '2017-05-30 20:21:08'),
+(26, 'Team', 'publish', NULL, 'open', 0, NULL, '2017-05-30 20:22:33', '2017-05-30 20:22:33'),
+(27, 'Team', 'publish', NULL, 'open', 0, NULL, '2017-05-30 20:23:52', '2017-05-30 20:23:52'),
+(28, 'Team', 'publish', NULL, 'open', 0, NULL, '2017-05-30 20:25:21', '2017-05-30 20:25:21');
 
 -- --------------------------------------------------------
 
@@ -946,16 +964,30 @@ CREATE TABLE `posts_translations` (
 INSERT INTO `posts_translations` (`id`, `post_title`, `post_excerpt`, `post_content`, `slug`, `post_author`, `post_trans_extra`, `post_id`, `locale`, `created_at`, `updated_at`) VALUES
 (5, 'busness traveller 2014', 'busness traveller 2014', '<p>busness traveller 2014</p>', 'busness-traveller-2014', 1, NULL, 3, 'en', NULL, NULL),
 (6, 'travel advisor', 'travel advisor', '<p>travel advisor</p>', 'travel-advisor', 1, NULL, 4, 'en', NULL, NULL),
-(7, 'cairo 360', 'editor''s choise award winnerfor 2014 for shootgun', '<p>editor&#39;s choise award winnerfor 2014 for shootgun</p>', 'cairo-360', 1, NULL, 5, 'en', NULL, NULL),
+(7, 'cairo 360', 'editor\'s choise award winnerfor 2014 for shootgun', '<p>editor&#39;s choise award winnerfor 2014 for shootgun</p>', 'cairo-360', 1, NULL, 5, 'en', NULL, NULL),
 (8, 'title 1', 'exerpt 1', '<p>exerpt 1</p>', 'title-1', 1, NULL, 6, 'en', NULL, NULL),
 (9, 'عنوان 1', 'عنوان 1', '<p>عنوان 1</p>', 'عنوان-1', 1, NULL, 6, 'ar', NULL, NULL),
 (10, 'title 2', 'title 2', '<p>title 2</p>', 'title-2', 1, NULL, 7, 'en', NULL, NULL),
 (11, 'title 3', 'title 3', '<p>title 3</p>', 'title-3', 1, NULL, 8, 'en', NULL, NULL),
 (12, 'title 4', 'title 4', '<p>title 4</p>', 'title-4', 1, NULL, 9, 'en', NULL, NULL),
-(13, 'mina test 1', 'mina test 1', '<p>mina test 1</p>', 'mina-test-1', 1, '{"pro_status":"mina test 1","location":"mina test 1","topic_title_1":"mina test 1","topic_body_1":"<p>mina test 1<\\/p>\\r\\n","topic_title_2":"mina test 1","topic_body_2":"<p>mina test 1<\\/p>\\r\\n","topic_title_3":"","topic_body_3":"","topic_title_4":"","topic_body_4":"","topic_title_5":"","topic_body_5":"","topic_title_6":"","topic_body_6":""}', 10, 'en', NULL, NULL),
-(14, 'mina test 2', 'mina test 2', '<p>mina test 2</p>', 'mina-test-2', 1, '{"pro_status":"mina test 2","location":"mina test 2","topic_title_1":"mina test 2","topic_body_1":"<p>mina test 2<\\/p>\\r\\n","topic_title_2":"mina test 2","topic_body_2":"","topic_title_3":"","topic_body_3":"","topic_title_4":"","topic_body_4":"","topic_title_5":"","topic_body_5":"","topic_title_6":"","topic_body_6":""}', 11, 'en', NULL, NULL),
-(15, 'mina test 4', 'mina test 4', '<p>mina test 4</p>', 'mina-test-4', 1, '{"pro_status":"mina test 4","location":"mina test 4","topic_title_1":"mina test 4","topic_body_1":"<p>mina test 4<\\/p>\\r\\n","topic_title_2":"","topic_body_2":"","topic_title_3":"mina test 4","topic_body_3":"<p>mina test 4<\\/p>\\r\\n","topic_title_4":"","topic_body_4":"","topic_title_5":"","topic_body_5":"","topic_title_6":"","topic_body_6":""}', 12, 'en', NULL, NULL),
-(16, 'mina test 5', 'mina test 5', '<p>mina test 5</p>', 'mina-test-5', 1, '{"pro_status":"mina test 5","location":"mina test 5","topic_title_1":"mina test 5","topic_body_1":"<p>mina test 5<\\/p>\\r\\n","topic_title_2":"","topic_body_2":"","topic_title_3":"","topic_body_3":"","topic_title_4":"","topic_body_4":"","topic_title_5":"","topic_body_5":"","topic_title_6":"","topic_body_6":""}', 13, 'en', NULL, NULL);
+(13, 'mina test 1', 'mina test 1', '<p>mina test 1</p>', 'mina-test-1', 1, '{\"pro_status\":\"mina test 1\",\"location\":\"mina test 1\",\"topic_title_1\":\"mina test 1\",\"topic_body_1\":\"<p>mina test 1<\\/p>\\r\\n\",\"topic_title_2\":\"mina test 1\",\"topic_body_2\":\"<p>mina test 1<\\/p>\\r\\n\",\"topic_title_3\":\"\",\"topic_body_3\":\"\",\"topic_title_4\":\"\",\"topic_body_4\":\"\",\"topic_title_5\":\"\",\"topic_body_5\":\"\",\"topic_title_6\":\"\",\"topic_body_6\":\"\"}', 10, 'en', NULL, NULL),
+(14, 'mina test 2', 'mina test 2', '<p>mina test 2</p>', 'mina-test-2', 1, '{\"pro_status\":\"mina test 2\",\"location\":\"mina test 2\",\"topic_title_1\":\"mina test 2\",\"topic_body_1\":\"<p>mina test 2<\\/p>\\r\\n\",\"topic_title_2\":\"mina test 2\",\"topic_body_2\":\"\",\"topic_title_3\":\"\",\"topic_body_3\":\"\",\"topic_title_4\":\"\",\"topic_body_4\":\"\",\"topic_title_5\":\"\",\"topic_body_5\":\"\",\"topic_title_6\":\"\",\"topic_body_6\":\"\"}', 11, 'en', NULL, NULL),
+(15, 'mina test 4', 'mina test 4', '<p>mina test 4</p>', 'mina-test-4', 1, '{\"pro_status\":\"mina test 4\",\"location\":\"mina test 4\",\"topic_title_1\":\"mina test 4\",\"topic_body_1\":\"<p>mina test 4<\\/p>\\r\\n\",\"topic_title_2\":\"\",\"topic_body_2\":\"\",\"topic_title_3\":\"mina test 4\",\"topic_body_3\":\"<p>mina test 4<\\/p>\\r\\n\",\"topic_title_4\":\"\",\"topic_body_4\":\"\",\"topic_title_5\":\"\",\"topic_body_5\":\"\",\"topic_title_6\":\"\",\"topic_body_6\":\"\"}', 12, 'en', NULL, NULL),
+(16, 'mina test 5', 'mina test 5', '<p>mina test 5</p>', 'mina-test-5', 1, '{\"pro_status\":\"mina test 5\",\"location\":\"mina test 5\",\"topic_title_1\":\"mina test 5\",\"topic_body_1\":\"<p>mina test 5<\\/p>\\r\\n\",\"topic_title_2\":\"\",\"topic_body_2\":\"\",\"topic_title_3\":\"\",\"topic_body_3\":\"\",\"topic_title_4\":\"\",\"topic_body_4\":\"\",\"topic_title_5\":\"\",\"topic_body_5\":\"\",\"topic_title_6\":\"\",\"topic_body_6\":\"\"}', 13, 'en', NULL, NULL),
+(17, 'citystars Elsahel', '', '<p>. . . Creating Living<br />\r\nlandmarks</p>', 'citystars-Elsahel', 1, NULL, 14, 'en', NULL, NULL),
+(18, 'Main Slider', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'Main-Slider', 1, NULL, 15, 'en', NULL, NULL),
+(19, 'Citystars Heliopolis', '', '<p>. . .</p>\r\n\r\n<p>Creating Living landmarks</p>', 'Citystars-Heliopolis', 1, NULL, 16, 'en', NULL, NULL),
+(20, 'Mission and Vision', '', '<div class=\"miss-vision\">\r\n<p>Mission</p>\r\n\r\n<p>Building on previous achievements, Citystars Properties will introduce new living landmarks to Egypt, to replicate the success of Citystars Heliopolis in Cairo. The success of this project has given us a reputation as pioneers and achievers in this field and as a brand that people can trust. This is something we intend to build on and further cement our position as a provider of premium quality and unique mixed-use real estate developments in both urban and resort destinations.</p>\r\n</div>\r\n\r\n<div class=\"miss-vision\">\r\n<p>VISION</p>\r\n\r\n<p>To provide an international standard urban resort and coastal resort experience that is unrivalled in Egypt and the Middle East. We are dedicated to building, managing and maintaining our real estate holdings to exceed the expectations of our clientele and contribute to the welfare of the community as a whole.We were first able to realise this vision after the success of our mega development - Citystars Heliopolis in Cairo, which gave us the base to build from.</p>\r\n</div>', 'Mission-and-Vision', 1, NULL, 17, 'en', NULL, NULL),
+(22, 'Mr. ABDULRAHMAN HASSAN SHARBATLY', 'CHAIRMAN FOUNDING & BOARD MEMBER', '', 'ABDULRAHMAN-HASSAN-SHARBATLY', 1, NULL, 19, 'en', NULL, NULL),
+(23, 'MR. FAHAD SHOBOKSHI', 'VICE CHAIRMAN & MANAGING DIRECTOR FOUNDING SHAREHOLDER & BOARD MEMBER', '', 'FAHAD-SHOBOKSHI', 1, NULL, 20, 'en', NULL, NULL),
+(24, 'ENG. HASSAN ABDULRAHMAN  SHARBATLY', 'VICE CHAIRMAN & MANAGING DIRECTOR FOUNDING SHAREHOLDER & BOARD MEMBER', '', 'HASSAN-ABDULRAHMAN--SHARBATLY', 1, NULL, 21, 'en', NULL, NULL),
+(25, 'Mr. IBRAHIM HASSAN SHARBATLY', 'MEMBER OF  THE BOARD OF DIRICTORS', '', 'IBRAHIM-HASSAN-SHARBATLY', 1, NULL, 22, 'en', NULL, NULL),
+(26, 'DR. YAHYA H. KOSHAK', 'FOUNDING SHAREHOLDER & MEMBER OF  THE BOARD OF DIRICTORS', '', 'YAHYA-H.-KOSHAK', 1, NULL, 23, 'en', NULL, NULL),
+(27, 'Mr. MOHAMMED WAGEH SHARBATLY', 'MEMBER OF  THE BOARD OF DIRICTORS', '', 'MOHAMMED-WAGEH-SHARBATLY', 1, NULL, 24, 'en', NULL, NULL),
+(28, 'Mr. YASSER WAGEH SHARBATLY', 'MEMBER OF  THE BOARD OF DIRICTORS', '', 'YASSER-WAGEH-SHARBATLY', 1, NULL, 25, 'en', NULL, NULL),
+(29, 'Mr. FAHD AL-TURKI', 'MEMBER OF  THE BOARD OF DIRICTORS', '', 'FAHD-AL-TURKI', 1, NULL, 26, 'en', NULL, NULL),
+(30, 'MS. ZEINAB MOHAMMED HAMDY', 'FOUNDING SHAREHOLDER & MEMBER OF  THE BOARD OF DIRICTORS', '', 'ZEINAB-MOHAMMED-HAMDY', 1, NULL, 27, 'en', NULL, NULL),
+(31, 'MR. J.KIM SEMIAO', 'MEMBER OF  THE BOARD OF DIRICTORS', '', 'KIM-SEMIAO', 1, NULL, 28, 'en', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1443,7 +1475,7 @@ ALTER TABLE `language`
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `multiple_media`
 --
@@ -1458,12 +1490,12 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `posts_translations`
 --
 ALTER TABLE `posts_translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `post_category`
 --
