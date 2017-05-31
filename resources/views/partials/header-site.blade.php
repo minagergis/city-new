@@ -40,7 +40,7 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li @if($pagename=='gallary') class="active" @endif class="sub-menu"><a>gallary</a>
+                    <li class="sub-menu"><a @if($pagename=='gallary') class="active" @endif >gallary</a>
                         <ul>
                             <?php
                             $gallary_cats= Category::where('type', 'gallary')->get();

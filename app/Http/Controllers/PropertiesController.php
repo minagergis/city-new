@@ -43,7 +43,7 @@ class PropertiesController extends Controller
     {
         $pagename='properties';
         $category = CategoryTranslation::where('slug', $slug)->first();
-        $props = Post::join('posts_translations','posts.id','=','posts_translations.post_id')->join('post_category', 'posts.id', '=', 'post_category.post_id')->where('post_category.category_id', $category->category_id)->get();
+        $props = Post::join('post_category', 'posts.id', '=', 'post_category.post_id')->where('post_category.category_id', $category->category_id)->select('posts.*')->get();
        //dd($props);
         return view('sections.inner-prop-cat', compact('pagename','props'));
 
